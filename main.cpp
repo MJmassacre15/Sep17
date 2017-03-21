@@ -1,8 +1,5 @@
-#ifndef EnvironmentalEngine_h
-#define EnvironmentalEngine_h
-
 //-----------------------------------------------------------------------------
-// Filename: EnvironmentalEngine.h
+// Filename: main.cpp
 // Description: -
 // Authors: Alexander Brunner, Paul J. Diwiak, Martin Sackl
 // Tutor: Philipp Hafner
@@ -10,15 +7,24 @@
 // Created: 21.03.2017
 // Last change: 21.03.2017
 //-----------------------------------------------------------------------------
+
+#include <iostream>
 #include "EnvironmentalCondition.h"
+#include "EnvironmentalEngine.h"
 
 
-class EnvironmentalEngine{
+// using std::cout;
+using std::endl;
 
-  private:
-  
-	public:
-		EnvironmentalCondition createCondition();
 
-};
-#endif
+// int main()
+// {
+// 
+// 	
+// 	EnvironmentalEngine engine;
+// 	engine.createCondition();
+// 	
+// 	
+// 
+//   return 0;
+// }
