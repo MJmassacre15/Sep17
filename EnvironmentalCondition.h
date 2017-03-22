@@ -39,25 +39,26 @@ class EnvironmentalCondition{
     
 	public:
 		//constructor:
-		EnvironmentalCondition(Cover sky_cover, Rank precipitation, float temperature, Rank wind);
+		EnvironmentalCondition(Cover sky_cover, Rank predipitation, float temperature, Rank wind);
 		
 		//methods:
 		bool isItHot();
 		bool isItRainy();
 		bool isItStormy();
 
-
 		//setter: 
 		void setSkyCover(Cover cover);
-		void setPrecipitation(Rank rank);
+		void setPredipitation(Rank rank);
 		void setTemperature(float temperature);
 		void setWind(Rank rank);
 
 		//getter: 
-		void getSkyCover();
-		void getPrecipitation();
-		void getTemperature();
-		void getWind();
+		Cover getSkyCover();
+		Rank getPredipitation();
+		float getTemperature();
+		Rank getWind();
+
+		void printVal();
 
 
 };

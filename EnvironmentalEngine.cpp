@@ -18,16 +18,13 @@
 
 
  
-// EnvironmentalCondition EnvironmentalEngine::createCondition()
-// {
-// // 	EnvironmentalCondition.EnvironmentalCondition(Cover sky_cover, Rank precipitation, float temperature, Rank wind);
-// // 	
-// // 	int randooo = rand() % 4;
-// // 	EnvironmentalCondition.sky_cover_ = randooo;
-// // 	
-// // 	
-// 	
-// 	
-// 	
-// 	return (SUNNY, HIGH, 22, HIGH);
-// }
+EnvironmentalCondition EnvironmentalEngine::createCondition()
+{
+	EnvironmentalCondition *condition = new EnvironmentalCondition(
+	(EnvironmentalCondition::Cover)(rand() % 4), 
+	(EnvironmentalCondition::Rank)(rand() % 4), 
+	14.3, 
+	(EnvironmentalCondition::Rank)(rand() % 4));
+	
+	return *condition;
+}

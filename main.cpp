@@ -13,18 +13,15 @@
 #include "EnvironmentalEngine.h"
 
 
-// using std::cout;
 using std::endl;
 
 
-// int main()
-// {
-// 
-// 	
-// 	EnvironmentalEngine engine;
-// 	engine.createCondition();
-// 	
-// 	
-// 
-//   return 0;
-// }
+int main()
+{	
+	EnvironmentalEngine *engine = new EnvironmentalEngine();
+	EnvironmentalCondition condition = engine->createCondition();
+
+	condition.printVal();
+
+  return 0;
+}
