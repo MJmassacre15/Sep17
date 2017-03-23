@@ -15,8 +15,8 @@
 
 class EnvironmentalEngine{
   
-	public:
-		EnvironmentalCondition createCondition();
+  public:
+    EnvironmentalCondition createCondition();
 
 };
 #endif

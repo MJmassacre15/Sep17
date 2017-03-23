@@ -20,11 +20,11 @@
 
 EnvironmentalCondition EnvironmentalEngine::createCondition()
 {
-	EnvironmentalCondition *condition = new EnvironmentalCondition(
-	(EnvironmentalCondition::Cover)(rand() % 4),
-	(EnvironmentalCondition::Rank)(rand() % 4),
-	40.3, 
-	(EnvironmentalCondition::Rank)(rand() % 4));
+  EnvironmentalCondition *condition = new EnvironmentalCondition(
+  (EnvironmentalCondition::Cover)(rand() % 4),
+  (EnvironmentalCondition::Rank)(rand() % 4),
+  40.3, 
+  (EnvironmentalCondition::Rank)(rand() % 4));
 
-	return *condition;
+  return *condition;
 }
