@@ -19,9 +19,9 @@ using std::endl;
 int main()
 {  
   EnvironmentalEngine *engine = new EnvironmentalEngine();
-  EnvironmentalCondition condition = engine->createCondition();
+  EnvironmentalCondition* condition = engine->createCondition();
 
-  condition.printVal();
+  condition->printVal();
 
   return 0;
 }

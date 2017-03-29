@@ -14,11 +14,10 @@
 
 #include <iostream>
 
- using std::cout;
+using std::cout;
 
 
-
-EnvironmentalCondition EnvironmentalEngine::createCondition()
+EnvironmentalCondition* EnvironmentalEngine::createCondition()
 {
   srand((unsigned)time(NULL));
   float temperature = rand() % 2500 + 1000;
