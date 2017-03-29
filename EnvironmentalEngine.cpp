@@ -23,12 +23,12 @@ EnvironmentalCondition EnvironmentalEngine::createCondition()
   srand((unsigned)time(NULL));
   float temperature = rand() % 2500 + 1000;
   temperature = temperature / 100;
-  
+
   EnvironmentalCondition *condition = new EnvironmentalCondition(
   (EnvironmentalCondition::Cover)(rand() % 4),
   (EnvironmentalCondition::Rank)(rand() % 4),
-  temperature, 
+  temperature,
   (EnvironmentalCondition::Rank)(rand() % 4));
 
-  return *condition;
+  return condition;
 }
