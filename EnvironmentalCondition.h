@@ -3,18 +3,19 @@
 
 //-----------------------------------------------------------------------------
 // Filename: EnvironmentalCondition.h
-// Description: -
+// Description: header-file for the environmental condition
 // Authors: Alexander Brunner, Paul J. Diwiak, Martin Sackl
-// Tutor: Philipp Hafner
+// Tutor: Roman Walch
 // Group: 15626
 // Created: 21.03.2017
-// Last change: 21.03.2017
+// Last change: 30.03.2017
 //-----------------------------------------------------------------------------
 
 
 class EnvironmentalCondition{
 
   public:
+  	//defines the "COVER"-enum, used for sky_cover_
     enum Cover
     {
       SUNNY, 
@@ -22,7 +23,7 @@ class EnvironmentalCondition{
       OVERCAST, 
       VERY_OVERCAST
     };
-  
+    //defines the "RANK"-enum, used for wind_ and predipitation_
     enum Rank
     {
       NONE, 
@@ -32,6 +33,7 @@ class EnvironmentalCondition{
     };
       
   private:
+  	//init used private variables
     Cover sky_cover_;
     Rank predipitation_;
     float temperature_;
@@ -59,7 +61,6 @@ class EnvironmentalCondition{
     Rank getWind();
 
     void printVal();
-
 
 };
 #endif

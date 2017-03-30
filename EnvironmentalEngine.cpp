@@ -1,11 +1,11 @@
 //-----------------------------------------------------------------------------
 // Filename: EnvironmentalEngine.cpp
-// Description: -
+// Description: cpp-file for the environmental engine
 // Authors: Alexander Brunner, Paul J. Diwiak, Martin Sackl
-// Tutor: Philipp Hafner
+// Tutor: Roman Walch
 // Group: 15626
 // Created: 21.03.2017
-// Last change: 21.03.2017
+// Last change: 30.03.2017
 //-----------------------------------------------------------------------------
 
 #include "EnvironmentalEngine.h"
@@ -14,14 +14,17 @@
 
 #include <iostream>
 
-using std::cout;
+// using std::cout;
 
-
+//generates the environmental conditions randomly
 EnvironmentalCondition* EnvironmentalEngine::createCondition()
 {
+  // srand is needed for rand(), won't work properley without srand
   srand((unsigned)time(NULL));
-  float temperature = rand() % 2500 + 1000;
-  temperature = temperature / 100;
+
+  float temperature = rand() % 250 + 100;
+  
+  temperature = temperature / 10;
 
   EnvironmentalCondition *condition = new EnvironmentalCondition(
   (EnvironmentalCondition::Cover)(rand() % 4),

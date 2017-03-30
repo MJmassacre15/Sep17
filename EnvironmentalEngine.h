@@ -3,12 +3,12 @@
 
 //-----------------------------------------------------------------------------
 // Filename: EnvironmentalEngine.h
-// Description: -
+// Description: header-file for the environmental engine
 // Authors: Alexander Brunner, Paul J. Diwiak, Martin Sackl
-// Tutor: Philipp Hafner
+// Tutor: Roman Walch
 // Group: 15626
 // Created: 21.03.2017
-// Last change: 21.03.2017
+// Last change: 30.03.2017
 //-----------------------------------------------------------------------------
 #include "EnvironmentalCondition.h"
 
