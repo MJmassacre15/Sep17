@@ -9,7 +9,7 @@ LDLIBS     =
 #-------------------------------------------------------------------------------
 
 #make executable
-all: $(EXECUTABLE) 
+all: $(EXECUTABLE)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $@ $< -MMD -MF ./$@.d
@@ -27,12 +27,14 @@ clean:
 	rm -f ./*.o
 	rm -f ./*.o.d
 	rm -f $(EXECUTABLE)
+	rm -f ./*.html
 
 #make cleanw for windows
 cleanw:
 	del /Q .\*.o
 	del /Q .\*.o.d
 	del /Q $(EXECUTABLE).exe
+	del /Q .\*.html
 
 #make valgrind
 valgrind:

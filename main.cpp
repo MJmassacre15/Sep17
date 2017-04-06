@@ -11,17 +11,23 @@
 #include <iostream>
 #include "EnvironmentalCondition.h"
 #include "EnvironmentalEngine.h"
-
+#include "HTMLWriter.h"
 
 using std::endl;
 
 
 int main()
-{  
-  EnvironmentalEngine *engine = new EnvironmentalEngine();
-  EnvironmentalCondition* condition = engine->createCondition();
+{
+  // EnvironmentalEngine *engine = new EnvironmentalEngine();
+  // EnvironmentalCondition* condition = engine->createCondition();
+  //
+  // condition->printVal();
 
-  condition->printVal();
+  HTMLWriter* writer = new HTMLWriter("Basis");
+  std::cout << writer->writeFile("Basic") << std::endl;
+
+  HTMLWriterEnvironment* writer_Env = new HTMLWriter("Umwelt");
+  std::cout << writer_Env->writeFile("Umwelt") << std::endl;
 
   return 0;
 }

@@ -1,5 +1,6 @@
 #ifndef HTMLWriter_h
 #define HTMLWriter_h
+#include <iostream>
 
 //-----------------------------------------------------------------------------
 // Filename: HTMLWriter.h
@@ -12,7 +13,11 @@
 //-----------------------------------------------------------------------------
 
 class HTMLWriter{
+  public:
+    std::string filename_;
+    HTMLWriter(std::string filename);
 
+    std::string writeFile(std::string String);
 
 
 };
