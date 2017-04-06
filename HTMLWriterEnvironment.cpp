@@ -14,27 +14,47 @@
 #include <fstream>
 
 
-HTMLWriterEnvironment::HTMLWriterEnvironment(std::string filename) : filename_(filename)
+HTMLWriterEnvironment::HTMLWriterEnvironment(std::string filename) : HTMLWriter (filename)
 {}
 
-std::string HTMLWriterEnvironment::writeFile(std::string String)
+std::string HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
 {
   // std::cout << HTMLWriter::filename_ << std::endl;
 
   std::ofstream environment_html;
   environment_html.open(HTMLWriterEnvironment::filename_ + ".html");
 
-  environment_html << "<!DOCTYPE html>";
+environment_html <<   "<!DOCTYPE html>";
 
-  environment_html << "<html lang='en'>";
-  environment_html << "  <head>";
-  environment_html << "    <meta charset='utf-8'>";
-  environment_html << "    <meta http-equiv='refresh' content='3'>";
-  environment_html << "    <title>SEP 2017</title>";
-  environment_html << "    <style>body{margin: 0px; padding: 0px;}</style>";
-  environment_html << "  </head>";
-  environment_html << "  <body>" << String << "</body>";
-  environment_html << "</html>";
+environment_html <<   "<html lang='en'>";
+environment_html <<   "  <head>";
+environment_html <<   "    <meta charset='utf-8'>";
+environment_html <<   "    <meta http-equiv='refresh' content='3'>";
+environment_html <<   "    <title>SEP 2017</title>";
+environment_html <<   "    <style>body{margin: 0px; padding: 0px;}</style>";
+environment_html <<   "  </head>";
+environment_html <<   "  <body>";
+environment_html <<   "    <table>";
+environment_html <<   "      <tbody>";
+environment_html <<   "        <tr>";
+environment_html <<   "          <td><strong>Sky cover</strong></td>";
+environment_html <<   "          <td></td>";
+environment_html <<   "        </tr>";
+environment_html <<   "        <tr>";
+environment_html <<   "          <td><img src='https://palme.iicm.tugraz.at/wiki/images/3/30/Very_overcast.png' alt='' width='128' height='128' /></td>";
+environment_html <<   "          <td>";
+environment_html <<   "            <p><strong>Precipitation: </strong>medium</p>";
+environment_html <<   "            <p><strong>Temperature: </strong>14.6°C</p>";
+environment_html <<   "            <p><strong>Wind: </strong>medium</p>";
+environment_html <<   "            <p><strong>Hot: </strong>false</p>";
+environment_html <<   "            <p><strong>Rainy: </strong>true</p>";
+environment_html <<   "            <p><strong>Stormy: </strong>true</p>";
+environment_html <<   "          </td>";
+environment_html <<   "        </tr>";
+environment_html <<   "      </tbody>";
+environment_html <<   "    </table>";
+environment_html <<   "  </body>";
+environment_html <<   "</html>";
 
   environment_html.close();
 
