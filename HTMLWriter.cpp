@@ -37,5 +37,5 @@ std::string HTMLWriter::writeFile(std::string String)
 
   basic_html.close();
 
-  return "HTML Datei erfolgreich erstellt!";
+  return "Basis HTML Datei erfolgreich erstellt!";
 }

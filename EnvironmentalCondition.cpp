@@ -12,11 +12,11 @@
 #include <iostream>
 
 
-EnvironmentalCondition::EnvironmentalCondition(Cover sky_cover, 
-  Rank predipitation, float temperature, Rank wind) : 
-  sky_cover_(sky_cover), 
-  predipitation_(predipitation), 
-  temperature_(temperature), 
+EnvironmentalCondition::EnvironmentalCondition(Cover sky_cover,
+  Rank predipitation, float temperature, Rank wind) :
+  sky_cover_(sky_cover),
+  predipitation_(predipitation),
+  temperature_(temperature),
   wind_(wind)
 {}
 
@@ -99,9 +99,9 @@ EnvironmentalCondition::Rank EnvironmentalCondition::getWind()
 // used for debugging
 // void EnvironmentalCondition::printVal()
 // {
-//   std::cout << "EnvironmentalCondition: " 
-//   << sky_cover_ << ", " 
-//   << predipitation_ << ", " 
-//   << temperature_ << ", " 
+//   std::cout << "EnvironmentalCondition: "
+//   << sky_cover_ << ", "
+//   << predipitation_ << ", "
+//   << temperature_ << ", "
 //   << wind_ << std::endl;
 // }
