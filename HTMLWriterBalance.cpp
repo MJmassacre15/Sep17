@@ -55,5 +55,5 @@ std::string HTMLWriterBalance::writeFile(int lemon, int sugar, int cash, int del
 
   balance_html.close();
 
-  return "Umgebung HTML Datei erfolgreich erstellt!";
+  return "Balance HTML Datei erfolgreich erstellt!";
 }
