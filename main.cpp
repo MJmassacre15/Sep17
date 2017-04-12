@@ -13,6 +13,7 @@
 #include "EnvironmentalEngine.h"
 #include "HTMLWriter.h"
 #include "HTMLWriterEnvironment.h"
+#include "HTMLWriterBalance.h"
 
 using std::endl;
 
@@ -21,6 +22,10 @@ int main()
 {
   EnvironmentalEngine *engine = new EnvironmentalEngine();
   EnvironmentalCondition* condition = engine->createCondition();
+  int lemon = 5;
+  int sugar = 69;
+  int cash = 666;
+  int delta = 13;
 
   // condition->printVal();
 
@@ -29,6 +34,9 @@ int main()
 
   HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
   std::cout << writer_Env->writeFile(*condition) << std::endl;
+
+  HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
+  std::cout << writer_Bal->writeFile(lemon, sugar, cash, delta) << std::endl;
 
   return 0;
 }
