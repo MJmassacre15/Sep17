@@ -15,7 +15,7 @@ class HTMLWriterEnvironment : HTMLWriter{
   public:
     HTMLWriterEnvironment(std::string filename);
 
-    std::string writeFile(EnvironmentalCondition ec);
+    void writeFile(EnvironmentalCondition ec);
 
 };
 #endif

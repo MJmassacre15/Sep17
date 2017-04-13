@@ -30,13 +30,13 @@ int main()
   // condition->printVal();
 
   HTMLWriter* writer = new HTMLWriter("Basis");
-  std::cout << writer->writeFile("Basic") << std::endl;
+  writer->writeFile("Basic");
 
   HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
-  std::cout << writer_Env->writeFile(*condition) << std::endl;
+  writer_Env->writeFile(*condition);
 
   HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
-  std::cout << writer_Bal->writeFile(lemon, sugar, cash, delta) << std::endl;
+  writer_Bal->writeFile(lemon, sugar, cash, delta);
 
   return 0;
 }

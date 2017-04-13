@@ -16,7 +16,7 @@
 HTMLWriterBalance::HTMLWriterBalance(std::string filename) : HTMLWriter (filename)
 {}
 
-std::string HTMLWriterBalance::writeFile(int lemon, int sugar, int cash, int delta)
+void HTMLWriterBalance::writeFile(int lemon, int sugar, int cash, int delta)
 {
   std::ofstream balance_html;
   balance_html.open(HTMLWriterBalance::filename_ + ".html");
@@ -33,15 +33,15 @@ std::string HTMLWriterBalance::writeFile(int lemon, int sugar, int cash, int del
   balance_html <<"    <table>"  << std::endl;
   balance_html <<"      <tbody>"  << std::endl;
   balance_html <<"        <tr>"  << std::endl;
-  balance_html <<"          <td><img src='https://palme.iicm.tugraz.at/wiki/images/3/35/Lemon.png' alt='' width='64' height='64' /></td>  "<< std::endl;
+  balance_html <<"          <td><img src='http://www.sozialverein-deutschlandsberg.at/sep_imgs/lemon.png' alt='' width='64' height='64' /></td>  "<< std::endl;
   balance_html <<"          <td><strong>Lemons: </strong> "<< lemon <<" </td>  "<< std::endl;
   balance_html <<"        </tr>"  << std::endl;
   balance_html <<"        <tr>"  << std::endl;
-  balance_html <<"          <td><img src='https://palme.iicm.tugraz.at/wiki/images/a/a9/Sugar.png' alt='' width='64' height='64' /></td>  "<< std::endl;
+  balance_html <<"          <td><img src='http://www.sozialverein-deutschlandsberg.at/sep_imgs/sugar.png' alt='' width='64' height='64' /></td>  "<< std::endl;
   balance_html <<"          <td><strong>Sugar: </strong> "<< sugar << "</td>"<< std::endl;
   balance_html <<"        </tr>"  << std::endl;
   balance_html <<"        <tr>"  << std::endl;
-  balance_html <<"          <td><img src='https://palme.iicm.tugraz.at/wiki/images/f/f0/Coins.png' alt='' width='64' height='64' /></td>  "<< std::endl;
+  balance_html <<"          <td><img src='http://www.sozialverein-deutschlandsberg.at/sep_imgs/cash.png' alt='' width='64' height='64' /></td>  "<< std::endl;
   balance_html <<"          <td>"  << std::endl;
   balance_html <<"            <p><strong>Cash: </strong>" << cash <<" $</p>  "<< std::endl;
   balance_html <<"            <p><strong>Delta: </strong>" << delta <<" $</p>  "<< std::endl;
@@ -54,6 +54,4 @@ std::string HTMLWriterBalance::writeFile(int lemon, int sugar, int cash, int del
 
 
   balance_html.close();
-
-  return "Balance HTML Datei erfolgreich erstellt!";
 }

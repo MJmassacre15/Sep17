@@ -17,7 +17,7 @@ class HTMLWriter{
     std::string filename_;
     HTMLWriter(std::string filename);
 
-    std::string writeFile(std::string String);
+    void writeFile(std::string String);
 
 
 };

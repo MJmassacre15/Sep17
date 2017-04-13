@@ -16,7 +16,7 @@
 HTMLWriter::HTMLWriter(std::string filename) : filename_(filename)
 {}
 
-std::string HTMLWriter::writeFile(std::string String)
+void HTMLWriter::writeFile(std::string String)
 {
   // std::cout << HTMLWriter::filename_ << std::endl;
 
@@ -36,6 +36,4 @@ std::string HTMLWriter::writeFile(std::string String)
   basic_html << "</html>";
 
   basic_html.close();
-
-  return "Basis HTML Datei erfolgreich erstellt!";
 }

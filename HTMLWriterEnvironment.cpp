@@ -17,7 +17,7 @@
 HTMLWriterEnvironment::HTMLWriterEnvironment(std::string filename) : HTMLWriter (filename)
 {}
 
-std::string HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
+void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
 {
   std::ofstream environment_html;
   environment_html.open(HTMLWriterEnvironment::filename_ + ".html");
@@ -124,6 +124,4 @@ std::string HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
   environment_html <<   "</html>" << std::endl;
 
   environment_html.close();
-
-  return "Umgebung HTML Datei erfolgreich erstellt!";
 }
