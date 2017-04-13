@@ -11,7 +11,6 @@
 // Last change: 06.04.2017
 //-----------------------------------------------------------------------------
 
-class HTMLWriter;
 
 class HTMLWriterBalance : HTMLWriter{
   public:

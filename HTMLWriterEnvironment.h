@@ -11,8 +11,6 @@
 // Last change: 06.04.2017
 //-----------------------------------------------------------------------------
 
-class HTMLWriter;
-
 class HTMLWriterEnvironment : HTMLWriter{
   public:
     HTMLWriterEnvironment(std::string filename);
