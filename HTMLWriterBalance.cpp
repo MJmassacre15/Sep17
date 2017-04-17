@@ -7,7 +7,6 @@
 // Created: 06.04.2017
 // Last change: 06.04.2017
 //-----------------------------------------------------------------------------
-#include "HTMLWriter.h"
 #include "HTMLWriterBalance.h"
 #include <iostream>
 #include <fstream>

@@ -1,6 +1,7 @@
 #ifndef HTMLWriterBalance_h
 #define HTMLWriterBalance_h
 #include <iostream>
+#include "HTMLWriter.h"
 //-----------------------------------------------------------------------------
 // Filename: HTMLWriterBalance.h
 // Description: header-file-file for the HTMLWriter
@@ -11,6 +12,7 @@
 // Last change: 06.04.2017
 //-----------------------------------------------------------------------------
 
+class HTMLWriter;
 
 class HTMLWriterBalance : HTMLWriter{
   public:
