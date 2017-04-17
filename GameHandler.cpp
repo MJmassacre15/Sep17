@@ -16,32 +16,115 @@
 GameHandler::GameHandler()
 {}
 
-void GameHandler::run(){
+int GameHandler::run(){
+//------------------------------------------------------------------------------
+// Variablen:
+//  run - so lange rennt das Spiel
+//  command - Command, der eingegeben wird, dazu der Name und eine temporäre Variable
+//  count - oder auch: Anzahl der übergebenen Parameter(-1 ist der Parameter_Name)
+//  empty - nach Leerzeichen wird im Eingabestring gesucht
+//  position - Positionen der Leerzeichen etc.
+//  params - Array für die eingegebenen Parameter
+//------------------------------------------------------------------------------
   bool run = true;
-  std::string command;
+  std::string command, command_name, temp;
+  int count;
+  std::string empty = " ";
+  size_t position;
+  std::string params[10];
 
-  while(run == true)
+  while(run == true)  // wird NUR durch "quit" abgebrochen
   {
     std::cout << "sep> ";
-    std::getline (std::cin, command);
-    command.erase(std::remove_if( command.begin(), command.end(), ::isspace ), command.end() );
 
-    if(command == "echo")
+    std::getline (std::cin, command);
+
+//------------------------------------------------------------------------------
+// Der command_name muss immer auf "" gesetzt werden, da er sonst von der
+// vorherigen Schleife mitübernommen wird.
+// Count, also Parameteranzahl muss auf -1 gesetzt werden.
+//------------------------------------------------------------------------------
+    command_name = "";
+    count = -1;
+
+//------------------------------------------------------------------------------
+// Leerzeichen suchen/ignorieren und die Eingabe unterteilen in:
+// [-1] Commando-Name
+// [0]  ab hier die eingegebenen Parameter
+//      z.B.: 1 Parameter, wird in params[0] gespeichert.
+//------------------------------------------------------------------------------
+    while((position = command.find(empty)) != std::string::npos)
     {
+      temp = command.substr(0, position);
+      if(temp != "")
+      {
+        if(count == -1)
+        {
+          command_name = temp;
+        }
+        else
+        {
+          params[count] = temp;
+        }
+        count++;
+      }
+      command.erase(0, position + empty.length());
     }
-    if(command == "balance")
+//------------------------------------------------------------------------------
+// Schleife endet, aber der letzte Teil der commands wurde nicht überprüft:
+// Hier wird gleich überprüft wie in der Schleife.
+//------------------------------------------------------------------------------
+    if(command != "")
     {
+      if(count == -1)
+      {
+        command_name = command;
+      }
+      else
+      {
+        params[count] = command;
+      }
+      count++;
     }
-    if(command == "quote")
+
+//------------------------------------------------------------------------------
+// Folgend wird auf Parametername, richtige Parameteranzahl und richtige
+// Parameterart überprüft und die jeweilige Funktion aufgerufen.
+//------------------------------------------------------------------------------
+    if(command_name == "echo")
     {
+      std::cout << "Echo mit " << count << " Parametern: OK" << std::endl;
+      return 5;
     }
-    if(command == "recipe")
+    if((command_name == "balance") && (count == 0))
     {
+      std::cout << "Balance mit 0 Parametern: OK" << std::endl;
+      return 1;
     }
-    if(command == "quit")
+    if((command_name == "quote") && (count == 0))
+    {
+      std::cout << "Quote mit 0 Parametern: OK" << std::endl;
+      return 2;
+    }
+    if((command_name == "recipe") && (count == 3))
+    {
+      std::cout << "Recipe mit 3 Parametern: OK" << std::endl;
+      return 3;
+    }
+    if((command_name == "quit") && (count == 0))
     {
       run = false;
+      std::cout << "Going out of business!\n";
+      std:: cout << "Parameter: " << count << std::endl;
+      return 0;
     }
-    std::cout << command << std::endl;
+    else
+    {
+      if(command_name != "")
+      {
+        std::cout << "[ERR] Usage: [CommandName] [param1] [param2] ... \n";
+      }
+    }
   }
+  return 4;
 }

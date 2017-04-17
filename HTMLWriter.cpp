@@ -24,7 +24,6 @@ void HTMLWriter::writeFile(std::string String)
   basic_html.open(HTMLWriter::filename_ + ".html");
 
   basic_html << "<!DOCTYPE html>";
-
   basic_html << "<html lang='en'>";
   basic_html << "  <head>";
   basic_html << "    <meta charset='utf-8'>";
