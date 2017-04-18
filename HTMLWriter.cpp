@@ -5,7 +5,7 @@
 // Tutor: Roman Walch
 // Group: 15626
 // Created: 06.04.2017
-// Last change: 06.04.2017
+// Last change: 18.04.2017
 //-----------------------------------------------------------------------------
 
 #include "HTMLWriter.h"

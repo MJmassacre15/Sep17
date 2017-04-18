@@ -1,2 +1,2 @@
-HTMLWriterBalance.o: HTMLWriterBalance.cpp HTMLWriter.h \
- HTMLWriterBalance.h
+HTMLWriterBalance.o: HTMLWriterBalance.cpp HTMLWriterBalance.h \
+ HTMLWriter.h

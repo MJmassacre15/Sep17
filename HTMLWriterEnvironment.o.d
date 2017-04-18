@@ -1,2 +1,2 @@
-HTMLWriterEnvironment.o: HTMLWriterEnvironment.cpp HTMLWriter.h \
- EnvironmentalCondition.h HTMLWriterEnvironment.h
+HTMLWriterEnvironment.o: HTMLWriterEnvironment.cpp \
+ EnvironmentalCondition.h HTMLWriterEnvironment.h HTMLWriter.h
