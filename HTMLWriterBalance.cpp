@@ -12,7 +12,8 @@
 #include <fstream>
 
 
-HTMLWriterBalance::HTMLWriterBalance(std::string filename) : HTMLWriter (filename)
+HTMLWriterBalance::HTMLWriterBalance(std::string filename) : HTMLWriter
+(filename)
 {}
 
 //------------------------------------------------------------------------------
