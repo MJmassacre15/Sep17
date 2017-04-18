@@ -12,6 +12,10 @@
 // Last change: 06.04.2017
 //-----------------------------------------------------------------------------
 
+//------------------------------------------------------------------------------
+// Basisklasse die von HTMLWriterEnvironment und HTMLWriterBalance
+// abgeleitet werden
+//------------------------------------------------------------------------------
 class HTMLWriter{
   public:
     std::string filename_;

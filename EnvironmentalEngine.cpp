@@ -23,7 +23,7 @@ EnvironmentalCondition* EnvironmentalEngine::createCondition()
   srand((unsigned)time(NULL));
 
   float temperature = rand() % 250 + 100;
-  
+
   temperature = temperature / 10;
 
   EnvironmentalCondition *condition = new EnvironmentalCondition(
