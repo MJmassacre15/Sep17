@@ -138,7 +138,7 @@ void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
   environment_html <<  " </tr>" << std::endl;
   environment_html <<  " <tr>" << std::endl;
   environment_html <<  " <td><img src='" << sky_cover_val
-                   <<  " 'alt='' width='250' height='auto'"
+                   <<  "' alt='' width='250'"
                        " style='background-color: white; "
                        " border: 1px solid black;' /></td>" << std::endl;
   environment_html <<  " <td>" << std::endl;
