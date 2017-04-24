@@ -14,6 +14,8 @@
 class Command;
 
 class Balance : Command{
+  private:
+    std::string name_;
   public:
     Balance(std::string name);
 };

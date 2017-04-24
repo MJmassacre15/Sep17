@@ -9,6 +9,8 @@
 //-----------------------------------------------------------------------------
 
 #include "GameHandler.h"
+#include "Command.h"
+#include "Balance.h"
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -96,10 +98,14 @@ int GameHandler::run(){
       std::cout << "Echo mit " << count << " Parametern: OK" << std::endl;
       return 5;
     }
-    if((command_name == "balance") && (count == 0))
+    if((command_name == "balance"))
     {
-      std::cout << "Balance mit 0 Parametern: OK" << std::endl;
-      return 1;
+      // Command *commando = new Command("Balance");
+
+      Balance *balance = new Balance("Balance");
+      // balance->execute(game, params[count]);
+      // std::cout << "Balance mit 0 Parametern: OK" << std::endl;
+      // return 1;
     }
     if((command_name == "quote") && (count == 0))
     {

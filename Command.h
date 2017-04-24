@@ -50,7 +50,7 @@ class Command
     // @param params Possible parameters neede for the execution
     // @return Integer representing the success of the action
 
-    virtual int execute(GameHandler& game, std::vector<std::string>& params) = 0;
+    virtual int execute(GameHandler& game, std::vector<std::string>& params);
 
     //--------------------------------------------------------------------------
     // Getter Methods
