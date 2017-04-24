@@ -32,7 +32,7 @@ int GameHandler::run(){
   std::string empty = " ";
   size_t position;
   std::string params[10];
-  
+
   while(run == true)  // wird NUR durch "quit" abgebrochen
   {
     std::cout << "sep> ";
