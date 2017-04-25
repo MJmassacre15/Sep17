@@ -12,19 +12,20 @@
 
 
 //------------------------------------------------------------------------------
-// Balance::Balance(std::string name) : Command(name)
-// {
-// }
+Balance::Balance(std::string name) : Command(name)
+{
+}
 
 
 //------------------------------------------------------------------------------
-// int execute(GameHandler& game, std::vector<std::string>& params)
-// {
-//   // std::cout << params << std::endl;
-//   return 0;
-// }
-
-int execute(GameHandler& game, std::vector<std::string>& params)
+// int Balance::execute(GameHandler& game, std::vector<std::string>& params)
+int Balance::execute(std::vector<std::string>& params)
 {
+  std::cout << "Balance Parameter:" << std::endl;
+  for(int i = 0; i < params.size(); i++)
+  {
+    std::cout << params[i] << std::endl;
+  }
+
   return 0;
 }

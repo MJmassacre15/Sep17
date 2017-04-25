@@ -21,7 +21,8 @@
 GameHandler::GameHandler()
 {}
 
-int GameHandler::run(){
+int GameHandler::run()
+{
 //------------------------------------------------------------------------------
 // Variablen:
 //  run - so lange rennt das Spiel
@@ -29,14 +30,15 @@ int GameHandler::run(){
 //  count - oder auch: Anzahl der übergebenen Parameter(-1 ist der Parameter_Name)
 //  empty - nach Leerzeichen wird im Eingabestring gesucht
 //  position - Positionen der Leerzeichen etc.
-//  params - Array für die eingegebenen Parameter
+//  params_vec - Vector für die eingegebenen Parameter
 //------------------------------------------------------------------------------
   bool run = true;
   std::string command, command_name, temp;
   int count;
   std::string empty = " ";
   size_t position;
-  std::string params[10];
+  std::vector<std::string> params_vec;
+
 
   while(run == true)  // wird NUR durch "quit" abgebrochen
   {
@@ -51,7 +53,7 @@ int GameHandler::run(){
 //------------------------------------------------------------------------------
     command_name = "";
     count = -1;
-
+    params_vec.clear();
 //------------------------------------------------------------------------------
 // Leerzeichen suchen/ignorieren und die Eingabe unterteilen in:
 // [-1] Commando-Name
@@ -69,7 +71,7 @@ int GameHandler::run(){
         }
         else
         {
-          params[count] = temp;
+          params_vec.push_back(temp);
         }
         count++;
       }
@@ -87,10 +89,18 @@ int GameHandler::run(){
       }
       else
       {
-        params[count] = command;
+        params_vec.push_back(temp);
       }
       count++;
     }
+
+    // std::cout << "anzahl: " << (params_vec.size()) << std::endl;
+    // std::cout << "letztes: " << (params_vec.back()) << std::endl;
+    //
+    // for(int i = 0; i < count; i++)
+    // {
+    //   std::cout << params_vec[i] << std::endl;
+    // }
 
 //------------------------------------------------------------------------------
 // Folgend wird auf Parametername, richtige Parameteranzahl und richtige
@@ -103,10 +113,9 @@ int GameHandler::run(){
     }
     if((command_name == "balance"))
     {
-      // Command *commando = new Command("Balance");
-
       Balance *balance = new Balance("Balance");
-      // balance->execute(game, params[count]);
+      balance->execute(params_vec);
+
       // std::cout << "Balance mit 0 Parametern: OK" << std::endl;
       // return 1;
     }
@@ -137,3 +146,9 @@ int GameHandler::run(){
   }
   return 4;
 }
+
+//
+// std::string GameHandler::getGameName()
+// {
+//   return game_name_;
+// }

@@ -32,8 +32,9 @@ const std::string &Command::getName() const
 {
   return command_name_;
 }
-
-int execute(GameHandler& game, std::vector<std::string>& params)
-{
- return 0;
-}
+// 
+// int execute(GameHandler& game, std::vector<std::string>& params)
+// {
+//  return 0;
+// }
+//
