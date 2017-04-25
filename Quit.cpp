@@ -21,5 +21,10 @@ Quit::Quit(std::string name) : Command(name)
 // int Quit::execute(GameHandler& game, std::vector<std::string>& params)
 int Quit::execute(std::vector<std::string>& params)
 {
+  if(params.size() == 0)
+  {
+  std::cout << "Going out of business!" << std::endl;
   return 0;
+  }
+  return 1;
 }

@@ -125,7 +125,10 @@ int GameHandler::run()
     if((command_name == "quit"))
     {
       Quit *quit = new Quit("Quit");
-      quit->execute(params_vec);
+      if(quit->execute(params_vec) == 0)
+      {
+        return 0;
+      }
     }
   }
   return 0;
