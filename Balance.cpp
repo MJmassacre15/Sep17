@@ -21,11 +21,21 @@ Balance::Balance(std::string name) : Command(name)
 // int Balance::execute(GameHandler& game, std::vector<std::string>& params)
 int Balance::execute(std::vector<std::string>& params)
 {
-  std::cout << "Balance Parameter:" << std::endl;
-  for(int i = 0; i < params.size(); i++)
+  if(params.size() == 0)
   {
-    std::cout << params[i] << std::endl;
+  std::cout << "L: 100" << std::endl;
+  std::cout << "S: 100" << std::endl;
+  std::cout << "----------" << std::endl;
+  std::cout << "C: 1000 $" << std::endl;
   }
+  else
+  {
+     std::cout << "[ERR] Usage: balance \n";
+  }
+  // for(int i = 0; i < params.size(); i++)
+  // {
+  //   std::cout << params[i] << std::endl;
+  // }
 
   return 0;
 }

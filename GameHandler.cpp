@@ -136,13 +136,13 @@ int GameHandler::run()
       std:: cout << "Parameter: " << count << std::endl;
       return 0;
     }
-    else
-    {
-      if(command_name != "")
-      {
-        std::cout << "[ERR] Usage: [CommandName] [param1] [param2] ... \n";
-      }
-    }
+    // else
+    // {
+    //   if(command_name != "")
+    //   {
+    //     std::cout << "[ERR] Usage: [CommandName] [param1] [param2] ... \n";
+    //   }
+    // }
   }
   return 4;
 }
