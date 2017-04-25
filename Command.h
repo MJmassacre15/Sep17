@@ -11,6 +11,8 @@
 #ifndef COMMAND_H_INCLUDED
 #define COMMAND_H_INCLUDED
 
+#include "GameHandler.h"
+
 #include <string>
 #include <vector>
 
@@ -50,7 +52,7 @@ class Command
     // @param params Possible parameters neede for the execution
     // @return Integer representing the success of the action
 
-    virtual int execute(GameHandler& game, std::vector<std::string>& params);
+    virtual int execute(GameHandler& game, std::vector<std::string>& params) = 0;
 
     //--------------------------------------------------------------------------
     // Getter Methods

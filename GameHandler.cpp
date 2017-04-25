@@ -15,6 +15,9 @@
 #include <fstream>
 #include <algorithm>
 
+#include <string>
+#include <vector>
+
 GameHandler::GameHandler()
 {}
 

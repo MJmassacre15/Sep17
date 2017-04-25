@@ -18,5 +18,8 @@ class Balance : Command{
     std::string name_;
   public:
     Balance(std::string name);
+
+    virtual int execute(GameHandler& game, std::vector<std::string>& params);
+
 };
 #endif
