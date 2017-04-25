@@ -20,7 +20,6 @@ class Balance : Command{
     Balance(std::string name);
 
     // virtual int execute(GameHandler& game, std::vector<std::string>& params) override;
-
     virtual int execute(std::vector<std::string>& params) override;
 };
 #endif
