@@ -98,6 +98,8 @@ int GameHandler::run()
       count++;
     }
 
+std::transform(command_name.begin(), command_name.end(), command_name.begin(),
+              ::tolower);
 //------------------------------------------------------------------------------
 // Folgend wird auf Parametername, richtige Parameteranzahl und richtige
 // Parameterart überprüft und die jeweilige Funktion aufgerufen.
