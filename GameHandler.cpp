@@ -120,7 +120,16 @@ int GameHandler::run()
     if((command_name == "recipe"))
     {
       Recipe *recipe = new Recipe("Recipe");
-      recipe->execute(params_vec);
+
+      switch(recipe->execute(params_vec))
+      {
+        case 2:
+          std::cout << "[ERR] Usage: recipe [lemon] [sugar] [water]\n";
+          break;
+        case 1:
+          std::cout << "[ERR] The sum of parts must be 100.\n";
+          break;
+      }
     }
     if((command_name == "quit"))
     {

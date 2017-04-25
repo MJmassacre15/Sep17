@@ -40,22 +40,30 @@ int Recipe::execute(std::vector<std::string>& params)
     }
     catch(std::invalid_argument)
     {
-      std::cout << "[ERR] Usage: recipe [lemon] [sugar] [water]\n";
+      return 2;
     }
 
-    lemon_ = std::to_string(lemon);
-    sugar_ = std::to_string(sugar);
-    water_ = std::to_string(water);
+    lemon_ = std::to_string(abs(lemon));
+    sugar_ = std::to_string(abs(sugar));
+    water_ = std::to_string(abs(water));
 
     if((lemon_ != params[0]) || (sugar_ != params[1]) || (water_ != params[2]))
     {
-      std::cout << "[ERR] Usage: recipe [lemon] [sugar] [water]\n";
+      return 2;
     }
-
+    else if ((lemon + sugar + water) != 100)
+    {
+      return 1;
+    }
+    else
+    {
+      std::cout << "L: " << lemon << "%\n" << "S: " << sugar
+                << "%\n" << "W: " << water << "%\n";
+    }
   }
   else
   {
-    std::cout << "[ERR] Usage: recipe [lemon] [sugar] [water]\n";
+    return 2;
   }
   return 0;
 }
