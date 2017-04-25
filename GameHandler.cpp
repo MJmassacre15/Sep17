@@ -11,7 +11,10 @@
 #include "GameHandler.h"
 #include "Command.h"
 #include "Balance.h"
+#include "Recipe.h"
 #include "Quote.h"
+#include "Quit.h"
+#include "Echo.h"
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -95,63 +98,35 @@ int GameHandler::run()
       count++;
     }
 
-    // std::cout << "anzahl: " << (params_vec.size()) << std::endl;
-    // std::cout << "letztes: " << (params_vec.back()) << std::endl;
-    //
-    // for(int i = 0; i < count; i++)
-    // {
-    //   std::cout << params_vec[i] << std::endl;
-    // }
-
 //------------------------------------------------------------------------------
 // Folgend wird auf Parametername, richtige Parameteranzahl und richtige
 // Parameterart überprüft und die jeweilige Funktion aufgerufen.
 //------------------------------------------------------------------------------
     if(command_name == "echo")
     {
-      std::cout << "Echo mit " << count << " Parametern: OK" << std::endl;
-      return 5;
+      Echo *echo = new Echo("Echo");
+      echo->execute(params_vec);
     }
     if((command_name == "balance"))
     {
       Balance *balance = new Balance("Balance");
       balance->execute(params_vec);
-
-      // std::cout << "Balance mit 0 Parametern: OK" << std::endl;
-      // return 1;
     }
-    if((command_name == "quote") && (count == 0))
+    if((command_name == "quote"))
     {
       Quote *quote = new Quote("Quote");
       quote->execute(params_vec);
-      // std::cout << "Quote mit 0 Parametern: OK" << std::endl;
-      // return 2;
     }
-    if((command_name == "recipe") && (count == 3))
+    if((command_name == "recipe"))
     {
-      std::cout << "Recipe mit 3 Parametern: OK" << std::endl;
-      return 3;
+      Recipe *recipe = new Recipe("Recipe");
+      recipe->execute(params_vec);
     }
-    if((command_name == "quit") && (count == 0))
+    if((command_name == "quit"))
     {
-      run = false;
-      std::cout << "Going out of business!\n";
-      std:: cout << "Parameter: " << count << std::endl;
-      return 0;
+      Quit *quit = new Quit("Quit");
+      quit->execute(params_vec);
     }
-    // else
-    // {
-    //   if(command_name != "")
-    //   {
-    //     std::cout << "[ERR] Usage: [CommandName] [param1] [param2] ... \n";
-    //   }
-    // }
   }
-  return 4;
+  return 0;
 }
-
-//
-// std::string GameHandler::getGameName()
-// {
-//   return game_name_;
-// }
