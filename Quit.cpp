@@ -26,5 +26,9 @@ int Quit::execute(std::vector<std::string>& params)
   std::cout << "Going out of business!" << std::endl;
   return 0;
   }
+  else
+  {
+    std::cout << "[ERR] Usage: quit\n";
+  }
   return 1;
 }

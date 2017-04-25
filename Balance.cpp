@@ -30,7 +30,7 @@ int Balance::execute(std::vector<std::string>& params)
   }
   else
   {
-     std::cout << "[ERR] Usage: balance \n";
+     std::cout << "[ERR] Usage: balance\n";
   }
   // for(int i = 0; i < params.size(); i++)
   // {
