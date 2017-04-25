@@ -11,6 +11,7 @@
 #include "GameHandler.h"
 #include "Command.h"
 #include "Balance.h"
+#include "Quote.h"
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -121,8 +122,10 @@ int GameHandler::run()
     }
     if((command_name == "quote") && (count == 0))
     {
-      std::cout << "Quote mit 0 Parametern: OK" << std::endl;
-      return 2;
+      Quote *quote = new Quote("Quote");
+      quote->execute(params_vec);
+      // std::cout << "Quote mit 0 Parametern: OK" << std::endl;
+      // return 2;
     }
     if((command_name == "recipe") && (count == 3))
     {

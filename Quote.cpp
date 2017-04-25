@@ -21,5 +21,14 @@ Quote::Quote(std::string name) : Command(name)
 // int Quote::execute(GameHandler& game, std::vector<std::string>& params)
 int Quote::execute(std::vector<std::string>& params)
 {
+  if(params.size() == 0)
+  {
+  std::cout << "L: 100 $" << std::endl;
+  std::cout << "S: 100 $" << std::endl;
+  }
+  else
+  {
+     std::cout << "[ERR] Usage: balance \n";
+  }
   return 0;
 }
