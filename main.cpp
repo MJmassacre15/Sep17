@@ -40,14 +40,9 @@ int main()
   // HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
   // writer_Bal->writeFile(lemon, sugar, cash, delta);
 
-  std::string word;
+  GameHandler *game = new GameHandler();
+  game->run();
 
-  View *view = new View();
-  word = view->view_input();
-  view->view_output(word);
-
-  // GameHandler *game = new GameHandler();
-  // game->run();
-
+  game->~GameHandler();
   return 0;
 }

@@ -17,6 +17,7 @@ class GameHandler{
   public:
     //constructor:
     GameHandler();
+    ~GameHandler();
 
     int run();
 

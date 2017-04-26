@@ -9,6 +9,7 @@
 //-----------------------------------------------------------------------------
 
 #include "Balance.h"
+#include "View.h"
 
 
 //------------------------------------------------------------------------------
@@ -21,17 +22,19 @@ Balance::Balance(std::string name) : Command(name)
 // int Balance::execute(GameHandler& game, std::vector<std::string>& params)
 int Balance::execute(std::vector<std::string>& params)
 {
+  View *view = new View();
   if(params.size() == 0)
   {
-  std::cout << "L: 100" << std::endl;
-  std::cout << "S: 100" << std::endl;
-  std::cout << "----------" << std::endl;
-  std::cout << "C: 1000 $" << std::endl;
+    view->view_output("L: 100\n");
+    view->view_output("S: 100\n");
+    view->view_output("----------\n");
+    view->view_output("C: 1000 $\n");
   }
   else
   {
-     std::cout << "[ERR] Usage: balance\n";
-  }
+     view->view_output("[ERR] Usage: balance\n");
 
+  }
+  view->~View();
   return 0;
 }

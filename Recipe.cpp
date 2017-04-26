@@ -9,6 +9,7 @@
 //-----------------------------------------------------------------------------
 
 #include "Recipe.h"
+#include "View.h"
 #include <stdexcept>
 
 
@@ -28,6 +29,7 @@ Recipe::Recipe(std::string name) : Command(name)
 // int Recipe::execute(GameHandler& game, std::vector<std::string>& params)
 int Recipe::execute(std::vector<std::string>& params)
 {
+  View *view = new View();
   if(params.size() == 3)
   {
     int lemon, sugar, water;
@@ -40,6 +42,7 @@ int Recipe::execute(std::vector<std::string>& params)
     }
     catch(std::invalid_argument)
     {
+      view->~View();
       return 2;
     }
 
@@ -53,17 +56,24 @@ int Recipe::execute(std::vector<std::string>& params)
     }
     else if ((lemon + sugar + water) != 100)
     {
+      view->~View();
       return 1;
     }
     else
     {
-      std::cout << "L: " << lemon << "%\n" << "S: " << sugar
-                << "%\n" << "W: " << water << "%\n";
+      view->view_output("L: " + lemon_);
+      view->view_output("%\n");
+      view->view_output("S: " + sugar_);
+      view->view_output("%\n");
+      view->view_output("W: " + water_);
+      view->view_output("%\n");
     }
   }
   else
   {
+    view->~View();
     return 2;
   }
+  view->~View();
   return 0;
 }

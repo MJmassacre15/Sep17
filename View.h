@@ -15,6 +15,7 @@
 class View{
   public:
     View();
+    ~View();
 
     void view_output(std::string output);
     std::string view_input();

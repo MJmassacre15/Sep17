@@ -8,6 +8,7 @@
 // Last change: 26.04.2017
 //-----------------------------------------------------------------------------
 
+#include "View.h"
 #include "GameHandler.h"
 #include "Command.h"
 #include "Balance.h"
@@ -23,6 +24,9 @@
 #include <vector>
 
 GameHandler::GameHandler()
+{}
+
+GameHandler::~GameHandler()
 {}
 
 int GameHandler::run()
@@ -42,14 +46,13 @@ int GameHandler::run()
   std::string empty = " ";
   size_t position;
   std::vector<std::string> params_vec;
-
+  View *view = new View();
 
   while(run == true)  // only stopped by QUIT
   {
-    std::cout << "sep> ";
+    view->view_output("sep> ");
 
-    std::getline (std::cin, command);
-    command = command + empty;
+    command = (view->view_input()) + empty;
     //really supid workaround for our problem, that find() cant find the end
     //of the input vector
 
@@ -129,10 +132,10 @@ std::transform(command_name.begin(), command_name.end(), command_name.begin(),
       switch(recipe->execute(params_vec))
       {
         case 2:
-          std::cout << "[ERR] Usage: recipe [lemon] [sugar] [water]\n";
+          view->view_output("[ERR] Usage: recipe [lemon] [sugar] [water]\n");
           break;
         case 1:
-          std::cout << "[ERR] The sum of parts must be 100.\n";
+          view->view_output("[ERR] The sum of parts must be 100.\n");
           break;
       }
     }
@@ -141,6 +144,7 @@ std::transform(command_name.begin(), command_name.end(), command_name.begin(),
       Quit *quit = new Quit("Quit");
       if(quit->execute(params_vec) == 0)
       {
+        view->~View();
         return 0;
       }
     }

@@ -9,6 +9,7 @@
 //-----------------------------------------------------------------------------
 
 #include "Quit.h"
+#include "View.h"
 
 
 //------------------------------------------------------------------------------
@@ -21,14 +22,17 @@ Quit::Quit(std::string name) : Command(name)
 // int Quit::execute(GameHandler& game, std::vector<std::string>& params)
 int Quit::execute(std::vector<std::string>& params)
 {
+  View *view = new View();
   if(params.size() == 0)
   {
-  std::cout << "Going out of business!" << std::endl;
+  view->view_output("Going out of business!\n");
+  view->~View();
   return 0;
   }
   else
   {
-    std::cout << "[ERR] Usage: quit\n";
+      view->view_output("[ERR] Usage: quit\n");
   }
+  view->~View();
   return 1;
 }
