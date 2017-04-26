@@ -8,6 +8,7 @@
 // Last change: 30.03.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
 #include "View.h"
 
 
@@ -18,13 +19,13 @@ View::View()
 
 
 //------------------------------------------------------------------------------
-void view_output(std::string output)
+void View::view_output(std::string output)
 {
   std::cout << output;
 }
 
 
-std::string view_input()
+std::string View::view_input()
 {
   std::string command;
   std::getline (std::cin, command);

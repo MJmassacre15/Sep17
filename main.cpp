@@ -9,13 +9,13 @@
 //-----------------------------------------------------------------------------
 
 #include <iostream>
-#include "View.h"
 #include "EnvironmentalCondition.h"
 #include "EnvironmentalEngine.h"
 #include "HTMLWriter.h"
 #include "HTMLWriterEnvironment.h"
 #include "HTMLWriterBalance.h"
 #include "GameHandler.h"
+#include "View.h"
 
 using std::endl;
 
