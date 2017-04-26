@@ -15,11 +15,6 @@
 //------------------------------------------------------------------------------
 Command::Command(std::string name) : command_name_(name)
 {
-  // if(name == "Balance")
-  // {
-  //   // Balance *balance = new Balance("Balance");
-  //   // balance->execute(game, params[count]);
-  // }
 }
 
 //------------------------------------------------------------------------------
@@ -32,9 +27,3 @@ const std::string &Command::getName() const
 {
   return command_name_;
 }
-//
-// int execute(GameHandler& game, std::vector<std::string>& params)
-// {
-//  return 0;
-// }
-//

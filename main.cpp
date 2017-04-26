@@ -21,23 +21,23 @@ using std::endl;
 
 int main()
 {
-  EnvironmentalEngine *engine = new EnvironmentalEngine();
-  EnvironmentalCondition* condition = engine->createCondition();
-  int lemon = 5;
-  int sugar = 69;
-  int cash = 666;
-  int delta = 13;
-
-  // condition->printVal();
-
-  HTMLWriter* writer = new HTMLWriter("Basis");
-  writer->writeFile("Basic");
-
-  HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
-  writer_Env->writeFile(*condition);
-
-  HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
-  writer_Bal->writeFile(lemon, sugar, cash, delta);
+  // EnvironmentalEngine *engine = new EnvironmentalEngine();
+  // EnvironmentalCondition* condition = engine->createCondition();
+  // int lemon = 5;
+  // int sugar = 69;
+  // int cash = 666;
+  // int delta = 13;
+  //
+  // // condition->printVal();
+  //
+  // HTMLWriter* writer = new HTMLWriter("Basis");
+  // writer->writeFile("Basic");
+  //
+  // HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
+  // writer_Env->writeFile(*condition);
+  //
+  // HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
+  // writer_Bal->writeFile(lemon, sugar, cash, delta);
 
   GameHandler *game = new GameHandler();
   game->run();
