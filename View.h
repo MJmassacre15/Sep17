@@ -15,5 +15,8 @@
 class View{
   public:
     View();
+
+    void view_output(std::string output);
+    std::string view_input();
 };
 #endif

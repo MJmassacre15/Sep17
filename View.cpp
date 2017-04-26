@@ -18,3 +18,15 @@ View::View()
 
 
 //------------------------------------------------------------------------------
+void view_output(std::string output)
+{
+  std::cout << output;
+}
+
+
+std::string view_input()
+{
+  std::string command;
+  std::getline (std::cin, command);
+  return command;
+}

@@ -9,6 +9,7 @@
 //-----------------------------------------------------------------------------
 
 #include <iostream>
+#include "View.h"
 #include "EnvironmentalCondition.h"
 #include "EnvironmentalEngine.h"
 #include "HTMLWriter.h"
@@ -39,9 +40,14 @@ int main()
   // HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
   // writer_Bal->writeFile(lemon, sugar, cash, delta);
 
-  GameHandler *game = new GameHandler();
-  game->run();
+  std::string word;
 
+  View *view = new View();
+  word = view->view_input();
+  view->view_output(word);
+
+  // GameHandler *game = new GameHandler();
+  // game->run();
 
   return 0;
 }
