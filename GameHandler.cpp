@@ -5,7 +5,7 @@
 // Tutor: Roman Walch
 // Group: 15626
 // Created: 06.04.2017
-// Last change: 06.04.2017
+// Last change: 26.04.2017
 //-----------------------------------------------------------------------------
 
 #include "GameHandler.h"
@@ -28,13 +28,13 @@ GameHandler::GameHandler()
 int GameHandler::run()
 {
 //------------------------------------------------------------------------------
-// Variablen:
-//  run - so lange rennt das Spiel
-//  command - Command, der eingegeben wird, dazu der Name und eine temporäre Variable
-//  count - oder auch: Anzahl der übergebenen Parameter(-1 ist der Parameter_Name)
-//  empty - nach Leerzeichen wird im Eingabestring gesucht
-//  position - Positionen der Leerzeichen etc.
-//  params_vec - Vector für die eingegebenen Parameter
+// variabls
+//  run - as long, as the game runs
+//  command - input command and the name and temp variabls
+//  count - number of inputed paramteres (command_name is count -1)
+//  empty - just the blank space
+//  position - position of the blank spaces
+//  params_vec - vector for the given params
 //------------------------------------------------------------------------------
   bool run = true;
   std::string command, command_name, temp;
@@ -44,28 +44,28 @@ int GameHandler::run()
   std::vector<std::string> params_vec;
 
 
-  while(run == true)  // wird NUR durch "quit" abgebrochen
+  while(run == true)  // only stopped by QUIT
   {
     std::cout << "sep> ";
 
     std::getline (std::cin, command);
     command = command + empty;
     //really supid workaround for our problem, that find() cant find the end
-    //of the input
+    //of the input vector
 
 //------------------------------------------------------------------------------
-// Der command_name muss immer auf "" gesetzt werden, da er sonst von der
-// vorherigen Schleife mitübernommen wird.
-// Count, also Parameteranzahl muss auf -1 gesetzt werden.
+// The command_name have to be called "", because it would be taken from the
+// former loop
+// Count (= number of params) must be set to -1.
 //------------------------------------------------------------------------------
     command_name = "";
     count = -1;
     params_vec.clear();
 //------------------------------------------------------------------------------
-// Leerzeichen suchen/ignorieren und die Eingabe unterteilen in:
-// [-1] Commando-Name
-// [0]  ab hier die eingegebenen Parameter
-//      z.B.: 1 Parameter, wird in params[0] gespeichert.
+// Finding blank spaces and ignore them, so the inpute can be splitted
+// [-1]  command name
+// [0]  from her given parameters
+//      e.g.: 1 parameter, stored in params[0]
 //------------------------------------------------------------------------------
     while((position = command.find(empty)) != std::string::npos)
     {
@@ -85,8 +85,8 @@ int GameHandler::run()
       command.erase(0, position + empty.length());
     }
 //------------------------------------------------------------------------------
-// Schleife endet, aber der letzte Teil der commands wurde nicht überprüft:
-// Hier wird gleich überprüft wie in der Schleife.
+// Loop ends, but the last part of the command wasn't checked.
+// Same check as in while-loop
 //------------------------------------------------------------------------------
     if(command != "")
     {
@@ -104,8 +104,8 @@ int GameHandler::run()
 std::transform(command_name.begin(), command_name.end(), command_name.begin(),
               ::tolower);
 //------------------------------------------------------------------------------
-// Folgend wird auf Parametername, richtige Parameteranzahl und richtige
-// Parameterart überprüft und die jeweilige Funktion aufgerufen.
+// Check if command name, number of parameters and format of the parameters
+// are correct and if so, the called command is executed
 //------------------------------------------------------------------------------
     if(command_name == "echo")
     {

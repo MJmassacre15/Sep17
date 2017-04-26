@@ -1,11 +1,11 @@
 //------------------------------------------------------------------------------
 // Filename: Command.h
-// Description: Class representing a general command
-// Authors: Tutors
-// Tutor: Tutors
-// Group: 42
-// Created: 08.08.2011
-// Last change: 30.01.2017
+// Description: header-file for command
+// Authors: Alexander Brunner, Paul J. Diwiak, Martin Sackl
+// Tutor: Roman Walch
+// Group: 15626
+// Created: 21.03.2017
+// Last change: 26.04.2017
 //------------------------------------------------------------------------------
 
 #ifndef COMMAND_H_INCLUDED
