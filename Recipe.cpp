@@ -42,10 +42,15 @@ int Recipe::execute(std::vector<std::string>& params)
     {
       return 2;
     }
-
+    //Debug output
+    // std::cout << "\n Before abs \n" << "L: " << lemon << "%\n" << "S: " << sugar
+    //           << "%\n" << "W: " << water << "%\n";
     lemon_ = std::to_string(abs(lemon));
     sugar_ = std::to_string(abs(sugar));
     water_ = std::to_string(abs(water));
+    //Debug output
+    // std::cout << "\n after abs \n" << "L: " << lemon << "%\n" << "S: " << sugar
+    //           << "%\n" << "W: " << water << "%\n";
 
     if((lemon_ != params[0]) || (sugar_ != params[1]) || (water_ != params[2]))
     {

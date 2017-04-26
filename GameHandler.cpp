@@ -49,6 +49,9 @@ int GameHandler::run()
     std::cout << "sep> ";
 
     std::getline (std::cin, command);
+    command = command + empty;
+    //really supid workaround for our problem, that find() cant find the end
+    //of the input
 
 //------------------------------------------------------------------------------
 // Der command_name muss immer auf "" gesetzt werden, da er sonst von der
