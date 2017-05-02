@@ -1,6 +1,7 @@
 #ifndef GameHandler_h
 #define GameHandler_h
 #include <iostream>
+#include "View.h"
 
 //-----------------------------------------------------------------------------
 // Filename: GameHandler.h
@@ -20,7 +21,8 @@ class GameHandler{
     ~GameHandler();
 
     int run();
-
+    int check_command(View &view);
+    bool check_error(int error);
 
 };
 #endif
