@@ -20,7 +20,7 @@
 using std::endl;
 
 
-int main()
+int main(int argc, char** argv)
 {
   // EnvironmentalEngine *engine = new EnvironmentalEngine();
   // EnvironmentalCondition* condition = engine->createCondition();
