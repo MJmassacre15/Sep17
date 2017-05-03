@@ -177,7 +177,7 @@ std::transform(command_name.begin(), command_name.end(), command_name.begin(),
         break;
     }
   }
-  if((command_name == "quit"))
+  if(command_name == "quit")
   {
     Quit *quit = new Quit("Quit");
     if(quit->execute(params_vec) == 0)
@@ -185,6 +185,10 @@ std::transform(command_name.begin(), command_name.end(), command_name.begin(),
       view.~View();
       return 0;
     }
+  }
+  if(command_name != "")
+  {
+    view.view_output("[ERR] Unknown command.\n");
   }
 return 1;
 }
