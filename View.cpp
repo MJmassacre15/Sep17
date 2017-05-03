@@ -10,7 +10,8 @@
 
 #include <iostream>
 #include "View.h"
-
+#include "HTMLWriterBalance.h"
+#include "HTMLWriterEnvironment.h"
 
 //------------------------------------------------------------------------------
 View::View()
@@ -34,4 +35,16 @@ std::string View::view_input()
   std::string command;
   std::getline (std::cin, command);
   return command;
+}
+
+void View::write_html_balance(int lemon, int sugar, int cash, int delta)
+{
+  HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
+  writer_Bal->writeFile(lemon, sugar, cash, delta);
+}
+
+void View::write_html_environment(EnvironmentalCondition &condition)
+{
+  HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
+  writer_Env->writeFile(condition);
 }

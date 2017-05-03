@@ -10,6 +10,10 @@
 
 #include "View.h"
 #include "GameHandler.h"
+#include "HTMLWriterBalance.h"
+#include "HTMLWriterEnvironment.h"
+#include "EnvironmentalEngine.h"
+#include "EnvironmentalCondition.h"
 #include "Command.h"
 #include "Balance.h"
 #include "Recipe.h"
@@ -49,7 +53,13 @@ int GameHandler::run()
   return 0;
 }
 
+int GameHandler::play()
+{
+  std::cout << "New round!" << std::endl;
+  std::cout << "Lagerbestände werden neu berechnet" << std::endl;
 
+  return 0;
+}
 
 
 int GameHandler::check_command(View &view)

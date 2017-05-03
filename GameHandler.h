@@ -24,5 +24,7 @@ class GameHandler{
     int check_command(View &view);
     bool check_error(int error);
 
+    int play();
+
 };
 #endif
