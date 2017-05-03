@@ -11,8 +11,21 @@
 #include "Buy.h"
 
 //------------------------------------------------------------------------------
-// Setweather::Setweather(std::string name) : Setweather(name)
-// {
-// }
+Buy::Buy(std::string name) : Command(name)
+{
+}
 
 //------------------------------------------------------------------------------
+int Buy::execute(std::vector<std::string>& params)
+{
+  unsigned int lemon = stoi(params[0]);
+  unsigned int sugar = stoi(params[1]);
+
+  setvalue_buy(lemon, sugar);
+  return 0;
+}
+int Buy::setvalue_buy(int lemon, int sugar)
+{
+  std::cout << "Test Buy\n";
+return 0;
+}
