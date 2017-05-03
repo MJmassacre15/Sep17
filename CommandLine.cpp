@@ -17,7 +17,7 @@ CommandLine::CommandLine()
 CommandLine::~CommandLine()
 {}
 //------------------------------------------------------------------------------
-int CommandLine::check_args()
+int CommandLine::check_args(int argc, char* argv[])
 {
   View *view = new View();
   int iterator = 1;
@@ -27,7 +27,7 @@ int CommandLine::check_args()
   }
   while (iterator < 5)
   {
-    if (isdigit(&argv[iterator]))
+    if (isdigit(atoi(argv[iterator])))
     {
       iterator++;
     }

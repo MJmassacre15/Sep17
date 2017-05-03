@@ -53,12 +53,20 @@ int GameHandler::run()
   return 0;
 }
 
-int GameHandler::play()
+int GameHandler::play(View &view, std::vector<std::string>& params)
 {
-  std::cout << "New round!" << std::endl;
-  std::cout << "Lagerbestände werden neu berechnet" << std::endl;
-
-  return 0;
+  if(params.size() == 0)
+  {
+  //do stuff
+    std::cout << "New round!" << std::endl;
+    std::cout << "Lagerbestände werden neu berechnet" << std::endl;
+    return 0;
+  }
+  else
+  {
+      view.view_output("[ERR] Usage: play\n");
+  }
+  return 1;
 }
 
 
@@ -132,10 +140,14 @@ int GameHandler::check_command(View &view)
 
 std::transform(command_name.begin(), command_name.end(), command_name.begin(),
             ::tolower);
-//------------------------------------------------------------------------------
-// Check if command name, number of parameters and format of the parameters
-// are correct and if so, the called command is executed
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // Check if command name, number of parameters and format of the parameters
+  // are correct and if so, the called command is executed
+  //----------------------------------------------------------------------------
+  if(command_name == "play")
+  {
+    play(view, params_vec);
+  }
   if(command_name == "echo")
   {
     Echo *echo = new Echo("Echo");
