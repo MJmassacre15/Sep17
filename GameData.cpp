@@ -10,12 +10,13 @@
 #include "GameData.h"
 #include <iostream>
 GameData::GameData(unsigned int lemon_price, unsigned int sugar_price,
-  unsigned int cash, unsigned int lemons, unsigned int sugar) :
+  unsigned int cash, unsigned int lemons, unsigned int sugar, int balance) :
   lemon_price_(lemon_price),
   sugar_price_(sugar_price),
   cash_(cash),
   lemons_(lemons),
-  sugar_(sugar)
+  sugar_(sugar),
+  balance_(balance)
 {}
 //setter
 void GameData::setLemonPrice(unsigned int lemon_price)
@@ -38,6 +39,10 @@ void GameData::setSugar(unsigned int sugar)
 {
   sugar_ = sugar;
 }
+void GameData::setBalance(int balance)
+{
+  balance_ = balance;
+}
 
 //getter
 unsigned int GameData::getLemonPrice()
@@ -59,4 +64,8 @@ unsigned int GameData::getLemons()
 unsigned int GameData::getSugar()
 {
   return sugar_;
+}
+int GameData::getBalance()
+{
+  return balance_;
 }

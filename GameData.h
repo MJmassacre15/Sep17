@@ -18,11 +18,13 @@ class GameData
     unsigned int cash_;
     unsigned int lemons_;  //number of lemons in the storage
     unsigned int sugar_;   //amount of sugar in the storage
+    int balance_;
 
   public:
     //constructor
     GameData(unsigned int lemon_price, unsigned int sugar_price,
-      unsigned int cash, unsigned int lemons, unsigned int sugar);
+      unsigned int cash, unsigned int lemons, unsigned int sugar,
+    int balance);
 
     //setter
     void setLemonPrice(unsigned int lemon_price);
@@ -30,6 +32,7 @@ class GameData
     void setCash(unsigned int cash);
     void setLemons(unsigned int lemons);
     void setSugar(unsigned int sugar);
+    void setBalance(int balance);
 
     //getter
     unsigned int getLemonPrice();
@@ -37,5 +40,6 @@ class GameData
     unsigned int getCash();
     unsigned int getLemons();
     unsigned int getSugar();
+    int getBalance();
 };
 #endif
