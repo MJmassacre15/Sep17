@@ -2,6 +2,7 @@
 #define GameHandler_h
 #include <iostream>
 #include "View.h"
+#include <vector>
 
 //-----------------------------------------------------------------------------
 // Filename: GameHandler.h
@@ -24,7 +25,7 @@ class GameHandler{
     int check_command(View &view);
     bool check_error(int error);
 
-    int play();
+    int play(View &view, std::vector<std::string>& params);
 
 };
 #endif
