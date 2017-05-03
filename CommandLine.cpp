@@ -11,23 +11,28 @@
 #include "CommandLine.h"
 #include "View.h"
 
+CommandLine::CommandLine()
+{}
+
+CommandLine::~CommandLine()
+{}
 //------------------------------------------------------------------------------
-int CommandLine::check_args(int argc, char* argv[])
+int CommandLine::check_args()
 {
   View *view = new View();
   int iterator = 1;
   if (argc != 4)
   {
-    return Usage;
+    return 1;
   }
   while (iterator < 5)
   {
-    if (isdigit(argv[iterator]))
+    if (isdigit(&argv[iterator]))
     {
       iterator++;
     }
     else{
-      return Usage;
+      return 1;
     }
   }
   view->view_output("\n");

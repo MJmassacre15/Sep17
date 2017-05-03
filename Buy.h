@@ -7,7 +7,7 @@
 // Created: 03.05.2017
 // Last change: 03.05.2017
 //-----------------------------------------------------------------------------
-class Buy : Buy{
+class Buy : Command{
 
     virtual int execute() override;
 };

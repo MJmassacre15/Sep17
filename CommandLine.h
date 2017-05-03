@@ -12,8 +12,8 @@
 class CommandLine{
     public:
       //constructor:
-      GameHandler();
-      ~GameHandler();
+      CommandLine();
+      ~CommandLine();
     private:
-      int check_args(int argc,char* argv);
+      int check_args();
 };
