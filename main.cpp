@@ -41,10 +41,17 @@ int main(int argc, char* argv[])
   // HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
   // writer_Bal->writeFile(lemon, sugar, cash, delta);
   CommandLine *commandlinecheck = new CommandLine();
-  commandlinecheck->check_args(argc, argv);
-  GameHandler *game = new GameHandler();
-  game->run();
-
-  game->~GameHandler();
+  // commandlinecheck->check_args(argc, argv);
+  // View *view = new View();
+  // if (commandlinecheck != 0)
+  // {
+  //   view->view_output("sep> ERROR: USAGE Trump4Prez n");
+  // }
+  if ((commandlinecheck->check_args(argc, argv)) != 2)
+  {
+    GameHandler *game = new GameHandler();
+    game->run();
+    game->~GameHandler();
+  }
   return 0;
 }
