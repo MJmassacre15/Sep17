@@ -1,6 +1,7 @@
 #ifndef View_h
 #define View_h
 #include <iostream>
+#include "EnvironmentalCondition.h"
 //------------------------------------------------------------------------------
 // Filename: View.h
 // Description: header-file for the VIEW
@@ -19,5 +20,8 @@ class View{
 
     void view_output(std::string output);
     std::string view_input();
+
+    void write_html_balance(int lemon, int sugar, int cash, int delta);
+    void write_html_environment(EnvironmentalCondition &condition);
 };
 #endif
