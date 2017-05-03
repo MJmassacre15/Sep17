@@ -29,6 +29,7 @@ int Balance::execute(std::vector<std::string>& params)
     view->view_output("S: 100\n");
     view->view_output("----------\n");
     view->view_output("C: 1000 $\n");
+    view->view_output("B: 1000 $\n");
   }
   else
   {
