@@ -18,8 +18,7 @@ CommandLine::CommandLine(std::string name) : CommandLine(name)
 
 
 //------------------------------------------------------------------------------
-// int Echo::execute(GameHandler& game, std::vector<std::string>& params)
-int CommandLine::execute(int argc, char* argv[])
+int CommandLine::checkargs(int argc, char* argv[])
 {
   View *view = new View();
   int iterator = 1;

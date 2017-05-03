@@ -8,11 +8,6 @@
 // Last change: 02.05.2017
 //-----------------------------------------------------------------------------
 class CommandLine : CommandLine{
-  private:
-    std::string name_;
-  public:
-    Echo(std::string name);
 
-    // virtual int execute(GameHandler& game, std::vector<std::string>& params) override;
-    virtual int execute(std::vector<std::string>& params) override;
+    int checkargs();
 };
