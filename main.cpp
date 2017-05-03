@@ -21,7 +21,7 @@
 using std::endl;
 
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
   // EnvironmentalEngine *engine = new EnvironmentalEngine();
   // EnvironmentalCondition* condition = engine->createCondition();
@@ -40,8 +40,8 @@ int main(int argc, char** argv)
   //
   // HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
   // writer_Bal->writeFile(lemon, sugar, cash, delta);
-  CommandLine *commandline = new CommandLine();
-  CommandLine = check_args(argc, argv); 
+  CommandLine *commandlinecheck = new CommandLine();
+  commandlinecheck->check_args(argc, argv);
   GameHandler *game = new GameHandler();
   game->run();
 

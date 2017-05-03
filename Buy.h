@@ -7,7 +7,9 @@
 // Created: 03.05.2017
 // Last change: 03.05.2017
 //-----------------------------------------------------------------------------
-class Buy : Command{
+#include "Command.h"
 
-    virtual int execute() override;
+class Buy : Command{
+    //
+    // virtual int execute() override;
 };

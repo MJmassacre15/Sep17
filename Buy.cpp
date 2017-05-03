@@ -11,8 +11,8 @@
 #include "Buy.h"
 
 //------------------------------------------------------------------------------
-Setweather::Setweather(std::string name) : Setweather(name)
-{
-}
+// Setweather::Setweather(std::string name) : Setweather(name)
+// {
+// }
 
 //------------------------------------------------------------------------------

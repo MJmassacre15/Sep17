@@ -13,7 +13,7 @@ class CommandLine{
     public:
       //constructor:
       CommandLine();
+      //Destructor:
       ~CommandLine();
-    private:
-      int check_args();
+      int check_args(int argc, char* argv[]);
 };
