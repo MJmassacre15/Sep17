@@ -20,6 +20,7 @@
 #include "Quote.h"
 #include "Quit.h"
 #include "Echo.h"
+#include "Setweather.h"
 #include <iostream>
 #include <fstream>
 #include <algorithm>
@@ -148,22 +149,22 @@ std::transform(command_name.begin(), command_name.end(), command_name.begin(),
   {
     play(view, params_vec);
   }
-  if(command_name == "echo")
+  else if(command_name == "echo")
   {
     Echo *echo = new Echo("Echo");
     echo->execute(params_vec);
   }
-  if((command_name == "balance"))
+  else if((command_name == "balance"))
   {
     Balance *balance = new Balance("Balance");
     balance->execute(params_vec);
   }
-  if((command_name == "quote"))
+  else if((command_name == "quote"))
   {
     Quote *quote = new Quote("Quote");
     quote->execute(params_vec);
   }
-  if((command_name == "recipe"))
+  else if((command_name == "recipe"))
   {
     Recipe *recipe = new Recipe("Recipe");
 
@@ -177,7 +178,20 @@ std::transform(command_name.begin(), command_name.end(), command_name.begin(),
         break;
     }
   }
-  if((command_name == "quit"))
+  else if((command_name == "setweather"))
+  {
+    Setweather *setweather = new Setweather("Setweather");
+    switch(setweather->execute(params_vec))
+    {
+      case 2:
+        view.view_output("[ERR] Usage: setweather [cover] [precipitation] [temperature] [wind]\n");
+        break;
+      case 1:
+      view.view_output("[ERR] Wrong parameter.\n");
+        break;
+    }
+  }
+  else if(command_name == "quit")
   {
     Quit *quit = new Quit("Quit");
     if(quit->execute(params_vec) == 0)
@@ -185,6 +199,10 @@ std::transform(command_name.begin(), command_name.end(), command_name.begin(),
       view.~View();
       return 0;
     }
+  }
+  else if(command_name != "")
+  {
+    view.view_output("[ERR] Unknown command.\n");
   }
 return 1;
 }
