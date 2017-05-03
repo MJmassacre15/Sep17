@@ -13,7 +13,7 @@
 #include "View.h"
 
 //------------------------------------------------------------------------------
-Setweather::Setweather(std::string name) : Setweather(name)
+Setweather::Setweather(std::string name) : Command(name)
 {
 }
 
