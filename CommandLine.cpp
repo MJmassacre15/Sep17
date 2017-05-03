@@ -12,13 +12,7 @@
 #include "View.h"
 
 //------------------------------------------------------------------------------
-CommandLine::CommandLine(std::string name) : CommandLine(name)
-{
-}
-
-
-//------------------------------------------------------------------------------
-int CommandLine::checkargs(int argc, char* argv[])
+int CommandLine::check_args(int argc, char* argv[])
 {
   View *view = new View();
   int iterator = 1;

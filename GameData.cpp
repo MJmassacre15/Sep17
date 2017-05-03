@@ -1,19 +1,9 @@
 //------------------------------------------------------------------------------
-// Filename: CommandLine.h
-// Description: header-file for the CommadLine check
+// Filename: GameData.cpp
+// Description: cpp-file for storing the data of the game
 // Authors: Alexander Brunner, Paul J. Diwiak, Martin Sackl
 // Tutor: Roman Walch
 // Group: 15626
 // Created: 02.05.2017
 // Last change: 02.05.2017
 //-----------------------------------------------------------------------------
-#include "View.h"
-
-class CommandLine{
-    public:
-      //constructor:
-      GameHandler();
-      ~GameHandler();
-    private:
-      int check_args(int argc,char* argv);
-};
