@@ -19,7 +19,20 @@ Setweather::Setweather(std::string name) : Setweather(name)
 
 
 //------------------------------------------------------------------------------
-int Setweather::Setweather(cover, precipitation, wind, temperature)
+int Setweather::execute(std::vector<std::string>& params)
 {
-
+  int cover = stoi(params[0]);
+  int precipitation = stoi(params[1]);
+  float temperature = stoi(params[2]);
+  int wind = stoi(params[3]);
+  setvalue(cover, precipitation, temperature, wind);
+  return 0;
+}
+int Setweather::setvalue(int cover,
+             int precipitation,
+             int wind,
+             float temperature)
+{
+  std::cout << "Test Setweather\n";
+return 0;
 }
