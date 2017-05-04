@@ -1,0 +1,20 @@
+includes aufröumen
+rand in constructor
+html weg
+cs
+konstanten als static const
+htmlwriter string includen
+balancewriter class nicht deklariern
+abegleitete klassen
+HTMLWriter string private
+copy constructor auf delete
+destruktor virtual
+datei open überprüfen
+statt destructor aufruf ein delete (auch in abgeleiteten klassen)
+fehlermeldungen auch als konstanten
+return values konstanten
+zu jeder klasse ein header-
+GameHandler auf stack
+abgeleitete klassen keine variablen doopelt deklarieren
+params check in commands selber
+catch bad_alloc bei allen news
