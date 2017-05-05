@@ -54,6 +54,7 @@ int GameHandler::run()
   return 0;
 }
 
+
 int GameHandler::play(View &view, std::vector<std::string>& params)
 {
   if(params.size() == 0)
@@ -92,7 +93,7 @@ int GameHandler::check_command(View &view)
   // really supid workaround for our problem, that find() cant find the end
   //   of the input vector
   // The command_name have to be called "", because it would be taken from the
-  // former loop
+  //  former loop
   // Count (= number of params) must be set to -1.
   //----------------------------------------------------------------------------
   command_name = "";
@@ -145,6 +146,17 @@ int GameHandler::check_command(View &view)
   //----------------------------------------------------------------------------
   // Check if command name, number of parameters and format of the parameters
   // are correct and if so, the called command is executed
+  //
+  // first create all command objects
+  //----------------------------------------------------------------------------
+
+  Echo echo ("Echo");
+  Balance balance ("Balance");
+  Quote quote ("Quote");
+  Recipe recipe ("Recipe");
+  Setweather setweather ("Setweather");
+  Quit quit ("Quit");
+
   //----------------------------------------------------------------------------
   if(command_name == "play")
   {
@@ -152,24 +164,19 @@ int GameHandler::check_command(View &view)
   }
   else if(command_name == "echo")
   {
-    Echo *echo = new Echo("Echo");
-    echo->execute(params_vec);
+    echo.execute(params_vec);
   }
   else if((command_name == "balance"))
   {
-    Balance *balance = new Balance("Balance");
-    balance->execute(params_vec);
+    balance.execute(params_vec);
   }
   else if((command_name == "quote"))
   {
-    Quote *quote = new Quote("Quote");
-    quote->execute(params_vec);
+    quote.execute(params_vec);
   }
   else if((command_name == "recipe"))
   {
-    Recipe *recipe = new Recipe("Recipe");
-
-    switch(recipe->execute(params_vec))
+    switch(recipe.execute(params_vec))
     {
       case 2:
         view.view_output("[ERR] Usage: recipe [lemon] [sugar] [water]\n");
@@ -181,8 +188,7 @@ int GameHandler::check_command(View &view)
   }
   else if((command_name == "setweather"))
   {
-    Setweather *setweather = new Setweather("Setweather");
-    switch(setweather->execute(params_vec))
+    switch(setweather.execute(params_vec))
     {
       case 2:
         view.view_output("[ERR] Usage: setweather [cover] [precipitation] [temperature] [wind]\n");
@@ -194,8 +200,7 @@ int GameHandler::check_command(View &view)
   }
   else if(command_name == "quit")
   {
-    Quit *quit = new Quit("Quit");
-    if(quit->execute(params_vec) == 0)
+    if(quit.execute(params_vec) == 0)
     {
       view.~View();
       return 0;

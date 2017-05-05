@@ -14,7 +14,7 @@ statt destructor aufruf ein delete (auch in abgeleiteten klassen)
 fehlermeldungen auch als konstanten
 return values konstanten
 zu jeder klasse ein header-
-GameHandler auf stack
+GameHandler auf stack                                                           erledigt
 abgeleitete klassen keine variablen doopelt deklarieren
 params check in commands selber
 catch bad_alloc bei allen news.
