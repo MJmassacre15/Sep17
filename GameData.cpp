@@ -8,16 +8,19 @@
 // Last change: 03.05.2017
 //-----------------------------------------------------------------------------
 #include "GameData.h"
-#include <iostream>
+
 
 GameData::GameData(unsigned int lemon_price, unsigned int sugar_price,
-  unsigned int cash, unsigned int lemons, unsigned int sugar, int balance) :
+  unsigned int cash, unsigned int lemons, unsigned int sugar, int balance,
+  int current_lemonade[3], unsigned int temperature) :
     lemon_price_(lemon_price),
     sugar_price_(sugar_price),
     cash_(cash),
     lemons_(lemons),
     sugar_(sugar),
-    balance_(balance)
+    balance_(balance),
+    current_lemonade_(current_lemonade),
+    temperature_(temperature)
 {}
 
 //setter
@@ -44,7 +47,14 @@ void GameData::setBalance(int balance)
 {
   balance_ = balance;
 }
-
+void GameData::setCurrentLemonade(int current_lemonade[3])
+{
+  current_lemonade_ = current_lemonade;
+}
+void GameData::setTemperature(int temperature)
+{
+  temperature_ = temperature;
+}
 //getter
 unsigned int GameData::getLemonPrice()
 {
@@ -69,4 +79,12 @@ unsigned int GameData::getSugar()
 int GameData::getBalance()
 {
   return balance_;
+}
+int GameData::setCurrentLemonade()
+{
+  return current_lemonade_;
+}
+void GameData::setTemperature()
+{
+  return temperature_;
 }

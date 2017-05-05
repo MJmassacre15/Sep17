@@ -10,7 +10,6 @@
 // Last change: 03.05.2017
 //-----------------------------------------------------------------------------
 #include "Command.h"
-#include <iostream>
 
 class Buy : Command
 {
