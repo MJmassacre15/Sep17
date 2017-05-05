@@ -24,7 +24,8 @@ void HTMLWriterBalance::writeFile(int lemon, int sugar, int cash, int delta)
 {
   std::ofstream balance_html;
   balance_html.open(HTMLWriterBalance::filename_);
-
+  if (balance_html != 0)
+  {
   balance_html <<  " <!DOCTYPE html>" << std::endl;
   balance_html <<  " <html lang='en'>"  << std::endl;
   balance_html <<  " <head>  "<< std::endl;
@@ -66,6 +67,6 @@ void HTMLWriterBalance::writeFile(int lemon, int sugar, int cash, int delta)
   balance_html <<  " </table>  "<< std::endl;
   balance_html <<  " </body>  "<< std::endl;
   balance_html <<  " </html> " << std::endl;
-
+  }
   balance_html.close();
 }

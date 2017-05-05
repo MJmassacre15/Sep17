@@ -21,15 +21,20 @@
 
 int main(int argc, char* argv[])
 {
+  // int lemon = 10;
+  // int sugar = 5;
+  // int cash = 100;
+  // int delta = 19;
+
   // EnvironmentalEngine *engine = new EnvironmentalEngine();
   // EnvironmentalCondition* condition = engine->createCondition();
-
+  //
   // HTMLWriter* writer = new HTMLWriter("Basis.html");
   // writer->writeFile("Basic");
-
+  //
   // HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
   // writer_Env->writeFile(*condition);
-
+  //
   // HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
   // writer_Bal->writeFile(lemon, sugar, cash, delta);
 

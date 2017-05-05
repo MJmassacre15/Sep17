@@ -27,7 +27,8 @@ void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
   // Gibt den filenamen an
   //----------------------------------------------------------------------------
   environment_html.open(HTMLWriterEnvironment::filename_);
-
+  if (environment_html != 0)
+  {
   std::string wind_val, precipitation_val, sky_cover_val;
   bool hot, rainy, stormy;
   std::string hot_val, rainy_val, stormy_val;
@@ -153,6 +154,6 @@ void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
   environment_html <<  " </table>" << std::endl;
   environment_html <<  " </body>" << std::endl;
   environment_html <<  " </html>" << std::endl;
-
+  }
   environment_html.close();
 }
