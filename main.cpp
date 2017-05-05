@@ -18,35 +18,32 @@
 #include "View.h"
 #include "CommandLine.h"
 
-using std::endl;
-
 
 int main(int argc, char* argv[])
 {
   // EnvironmentalEngine *engine = new EnvironmentalEngine();
   // EnvironmentalCondition* condition = engine->createCondition();
-  // int lemon = 5;
-  // int sugar = 69;
-  // int cash = 666;
-  // int delta = 13;
-  //
-  // // condition->printVal();
-  //
-  // HTMLWriter* writer = new HTMLWriter("Basis");
+
+  // HTMLWriter* writer = new HTMLWriter("Basis.html");
   // writer->writeFile("Basic");
-  //
+
   // HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
   // writer_Env->writeFile(*condition);
-  //
+
   // HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
   // writer_Bal->writeFile(lemon, sugar, cash, delta);
-  CommandLine *commandlinecheck = new CommandLine();
+
+
+
   // commandlinecheck->check_args(argc, argv);
   // View *view = new View();
   // if (commandlinecheck != 0)
   // {
   //   view->view_output("sep> ERROR: USAGE Trump4Prez n");
   // }
+
+  CommandLine *commandlinecheck = new CommandLine();
+
   if ((commandlinecheck->check_args(argc, argv)) != 2)
   {
     GameHandler *game = new GameHandler();

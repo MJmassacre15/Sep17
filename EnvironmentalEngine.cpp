@@ -11,10 +11,8 @@
 #include "EnvironmentalEngine.h"
 #include "EnvironmentalCondition.h"
 
-
 #include <iostream>
 
-// using std::cout;
 
 //generates the environmental conditions randomly
 EnvironmentalCondition* EnvironmentalEngine::createCondition()

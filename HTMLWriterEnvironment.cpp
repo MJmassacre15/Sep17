@@ -19,29 +19,25 @@ HTMLWriterEnvironment::HTMLWriterEnvironment(std::string filename) : HTMLWriter
 
 //------------------------------------------------------------------------------
 // Ruft die writeFile Funktion auf
-//
 //------------------------------------------------------------------------------
 void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
 {
   std::ofstream environment_html;
-//------------------------------------------------------------------------------
-// Gibt den filenamen an + der .html Endung
-//
-//------------------------------------------------------------------------------
-  environment_html.open(HTMLWriterEnvironment::filename_ + ".html");
+  //----------------------------------------------------------------------------
+  // Gibt den filenamen an
+  //----------------------------------------------------------------------------
+  environment_html.open(HTMLWriterEnvironment::filename_);
 
   std::string wind_val, precipitation_val, sky_cover_val;
   bool hot, rainy, stormy;
   std::string hot_val, rainy_val, stormy_val;
 
-
   //get temperature
   float temperature_val = ec.getTemperature();
 
-//------------------------------------------------------------------------------
-// Bekommt die Windverhältnisse und ordnet die Werte zu
-//
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // Bekommt die Windverhältnisse und ordnet die Werte zu
+  //----------------------------------------------------------------------------
   EnvironmentalCondition::Rank wind = ec.getWind();
   switch(wind)
   {
@@ -58,10 +54,9 @@ void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
       wind_val = "High";
   }
 
-//------------------------------------------------------------------------------
-// Bekommt die Niederschlagsmenge und ordnet die Werte zu
-//
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // Bekommt die Niederschlagsmenge und ordnet die Werte zu
+  //----------------------------------------------------------------------------
   EnvironmentalCondition::Rank precipitation = ec.getPredipitation();
   switch(precipitation)
   {
@@ -78,10 +73,9 @@ void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
       precipitation_val = "High";
   }
 
-//------------------------------------------------------------------------------
-// Bekommt die Temperatur Verhältnisse
-//
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // Bekommt die Temperatur Verhältnisse
+  //----------------------------------------------------------------------------
   hot = ec.isItHot();
   rainy = ec.isItRainy();
   stormy = ec.isItStormy();
@@ -90,10 +84,9 @@ void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
   if(rainy == 0) rainy_val = "false"; else rainy_val = "true";
   if(stormy == 0) stormy_val = "false"; else stormy_val = "true";
 
-//------------------------------------------------------------------------------
-// Je nach Witterung werden die verschiedenen Bilder aufgerufen
-//
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // Je nach Witterung werden die verschiedenen Bilder aufgerufen
+  //----------------------------------------------------------------------------
   EnvironmentalCondition::Cover sky_cover = ec.getSkyCover();
   switch(sky_cover)
   {
@@ -116,10 +109,10 @@ void HTMLWriterEnvironment::writeFile(EnvironmentalCondition ec)
 
 
 
-//------------------------------------------------------------------------------
-// HTML Code für die Seite plus einen Counter der alle 3 Sekunden die Seite
-// aktualisiert und die HTML Seite gleich ausgibt/schreibt
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // HTML Code für die Seite plus einen Counter der alle 3 Sekunden die Seite
+  // aktualisiert und die HTML Seite gleich ausgibt/schreibt
+  //----------------------------------------------------------------------------
   environment_html <<  " <!DOCTYPE html>" << std::endl;
   environment_html <<  " <html lang='en'>" << std::endl;
   environment_html <<  " <head>" << std::endl;

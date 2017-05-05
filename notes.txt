@@ -1,7 +1,7 @@
 includes aufröumen
 rand in constructor
-html weg
-cs
+html weg                                                                        erledigt
+cs                                                                              erledigt(hoffentlich)
 konstanten als static const
 htmlwriter string includen
 balancewriter class nicht deklariern
@@ -17,4 +17,4 @@ zu jeder klasse ein header-
 GameHandler auf stack
 abgeleitete klassen keine variablen doopelt deklarieren
 params check in commands selber
-catch bad_alloc bei allen news
+catch bad_alloc bei allen news.

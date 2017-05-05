@@ -1,6 +1,5 @@
 #ifndef GameData_h
 #define GameData_h
-#include <iostream>
 //------------------------------------------------------------------------------
 // Filename: GameData.h
 // Description: header-file for storing the data of the game
@@ -10,6 +9,9 @@
 // Created: 03.05.2017
 // Last change: 03.05.2017
 //-----------------------------------------------------------------------------
+
+#include <iostream>
+
 class GameData
 {
   private:
@@ -23,7 +25,7 @@ class GameData
   public:
     //constructor
     GameData(unsigned int lemon_price, unsigned int sugar_price,
-      unsigned int cash, unsigned int lemons, unsigned int sugar,
+    unsigned int cash, unsigned int lemons, unsigned int sugar,
     int balance);
 
     //setter

@@ -14,10 +14,10 @@
 
 EnvironmentalCondition::EnvironmentalCondition(Cover sky_cover,
   Rank predipitation, float temperature, Rank wind) :
-  sky_cover_(sky_cover),
-  predipitation_(predipitation),
-  temperature_(temperature),
-  wind_(wind)
+    sky_cover_(sky_cover),
+    predipitation_(predipitation),
+    temperature_(temperature),
+    wind_(wind)
 {}
 
 //checks if the temperature is higher than the threshold
@@ -28,6 +28,7 @@ bool EnvironmentalCondition::isItHot()
   else
     return false;
 }
+
 //checks if the predipitation is high enough and if the sky is coverd
 bool EnvironmentalCondition::isItRainy()
 {
@@ -39,6 +40,7 @@ bool EnvironmentalCondition::isItRainy()
   else
     return false;
 }
+
 //checks if the wind is strong enough and if the sky is coverd
 bool EnvironmentalCondition::isItStormy()
 {
@@ -50,6 +52,7 @@ bool EnvironmentalCondition::isItStormy()
   else
     return false;
 }
+
 
 //calls skycover setter
 void EnvironmentalCondition::setSkyCover(Cover cover)

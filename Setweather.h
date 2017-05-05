@@ -1,7 +1,5 @@
 #ifndef Setweather_h
 #define Setweather_h
-#include <iostream>
-#include "Command.h"
 //------------------------------------------------------------------------------
 // Filename: Setweather.h
 // Description: header-file for the Setweather function
@@ -12,10 +10,11 @@
 // Last change: 03.05.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
+#include "Command.h"
 
-class Command;
-
-class Setweather : Command{
+class Setweather : Command
+{
   private:
     std::string name_;
   public:

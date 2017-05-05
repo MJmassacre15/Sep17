@@ -1,3 +1,5 @@
+#ifndef CommandLine_h
+#define CommandLine_h
 //------------------------------------------------------------------------------
 // Filename: CommandLine.h
 // Description: header-file for the CommadLine check
@@ -7,13 +9,18 @@
 // Created: 02.05.2017
 // Last change: 02.05.2017
 //-----------------------------------------------------------------------------
+
 #include "View.h"
 
-class CommandLine{
-    public:
-      //constructor:
-      CommandLine();
-      //Destructor:
-      ~CommandLine();
-      int check_args(int argc, char* argv[]);
+class CommandLine
+{
+  public:
+    //constructor:
+    CommandLine();
+
+    //Destructor:
+    ~CommandLine();
+
+    int check_args(int argc, char* argv[]);
 };
+#endif

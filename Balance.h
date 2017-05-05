@@ -1,7 +1,5 @@
 #ifndef Balance_h
 #define Balance_h
-#include <iostream>
-#include "Command.h"
 //------------------------------------------------------------------------------
 // Filename: Balance.h
 // Description: header-file for the Balance command
@@ -11,9 +9,12 @@
 // Created: 21.03.2017
 // Last change: 30.03.2017
 //-----------------------------------------------------------------------------
-class Command;
 
-class Balance : Command{
+#include <iostream>
+#include "Command.h"
+
+class Balance : Command
+{
   private:
     std::string name_;
   public:

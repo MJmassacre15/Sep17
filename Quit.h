@@ -1,7 +1,5 @@
 #ifndef Quit_h
 #define Quit_h
-#include <iostream>
-#include "Command.h"
 //------------------------------------------------------------------------------
 // Filename: Quit.h
 // Description: header-file for the quit command
@@ -12,10 +10,11 @@
 // Last change: 26.04.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
+#include "Command.h"
 
-class Command;
-
-class Quit : Command{
+class Quit : Command
+{
   private:
     std::string name_;
   public:

@@ -14,10 +14,10 @@
 #include <stdexcept>
 #include <iomanip>
 #include <sstream>
+
 //------------------------------------------------------------------------------
 Setweather::Setweather(std::string name) : Command(name)
-{
-}
+{}
 
 
 //------------------------------------------------------------------------------
@@ -49,7 +49,6 @@ int Setweather::execute(std::vector<std::string>& params)
     temperature_ = std::to_string(abs(temperature));
     wind_2 << wind;
     wind_ = wind_2.str();
-
 
     if((cover_ != params[0]) || (precipitation_ != params[1]) ||
        (temperature_ != params[2]) || (wind_ != params[3]))

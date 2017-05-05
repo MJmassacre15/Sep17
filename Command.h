@@ -1,3 +1,5 @@
+#ifndef COMMAND_H_INCLUDED
+#define COMMAND_H_INCLUDED
 //------------------------------------------------------------------------------
 // Filename: Command.h
 // Description: header-file for command
@@ -8,27 +10,20 @@
 // Last change: 26.04.2017
 //------------------------------------------------------------------------------
 
-#ifndef COMMAND_H_INCLUDED
-#define COMMAND_H_INCLUDED
-
 #include "GameHandler.h"
 
 #include <string>
 #include <vector>
-
-class GameHandler;
 
 class Command
 {
   private:
     //--------------------------------------------------------------------------
     // Private copy constructor
-
     Command(const Command& original);
 
     //--------------------------------------------------------------------------
     // Private assignment operator
-
     Command& operator=(const Command& original);
 
     //--------------------------------------------------------------------------
@@ -38,12 +33,10 @@ class Command
   public:
     //--------------------------------------------------------------------------
     // Constructor
-
     Command(std::string name);
 
     //--------------------------------------------------------------------------
     // Destructor
-
     virtual ~Command();
 
     //--------------------------------------------------------------------------

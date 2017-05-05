@@ -48,13 +48,14 @@ int Buy::execute(std::vector<std::string>& params)
     view->view_output("%\n");
   }
 
-
   setvalue_buy(lemon, sugar);
-    view->~View();
+  view->~View();
   return 0;
 }
+
+
 int Buy::setvalue_buy(int lemon, int sugar)
 {
   std::cout << "Test Buy\n";
-return 0;
+  return 0;
 }

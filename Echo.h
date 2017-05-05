@@ -1,7 +1,5 @@
 #ifndef Echo_h
 #define Echo_h
-#include <iostream>
-#include "Command.h"
 //------------------------------------------------------------------------------
 // Filename: Echo.h
 // Description: header-file for the echo command
@@ -12,9 +10,11 @@
 // Last change: 26.04.2017
 //-----------------------------------------------------------------------------
 
-class Command;
+#include <iostream>
+#include "Command.h"
 
-class Echo : Command{
+class Echo : Command
+{
   private:
     std::string name_;
   public:

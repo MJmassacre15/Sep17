@@ -33,8 +33,7 @@ int Balance::execute(std::vector<std::string>& params)
   }
   else
   {
-     view->view_output("[ERR] Usage: balance\n");
-
+    view->view_output("[ERR] Usage: balance\n");
   }
   view->~View();
   return 0;

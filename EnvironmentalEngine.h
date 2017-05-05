@@ -12,9 +12,8 @@
 //-----------------------------------------------------------------------------
 #include "EnvironmentalCondition.h"
 
-
-class EnvironmentalEngine{
-  
+class EnvironmentalEngine
+{
   public:
     EnvironmentalCondition* createCondition();
 

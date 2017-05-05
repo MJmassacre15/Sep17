@@ -9,21 +9,22 @@
 //-----------------------------------------------------------------------------
 #include "GameData.h"
 #include <iostream>
+
 GameData::GameData(unsigned int lemon_price, unsigned int sugar_price,
   unsigned int cash, unsigned int lemons, unsigned int sugar, int balance) :
-  lemon_price_(lemon_price),
-  sugar_price_(sugar_price),
-  cash_(cash),
-  lemons_(lemons),
-  sugar_(sugar),
-  balance_(balance)
+    lemon_price_(lemon_price),
+    sugar_price_(sugar_price),
+    cash_(cash),
+    lemons_(lemons),
+    sugar_(sugar),
+    balance_(balance)
 {}
+
 //setter
 void GameData::setLemonPrice(unsigned int lemon_price)
 {
   lemon_price_ = lemon_price;
 }
-
 void GameData::setSugarPrice(unsigned int sugar_price)
 {
   sugar_price_ = sugar_price;

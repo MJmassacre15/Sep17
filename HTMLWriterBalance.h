@@ -1,7 +1,5 @@
 #ifndef HTMLWriterBalance_h
 #define HTMLWriterBalance_h
-#include <iostream>
-#include "HTMLWriter.h"
 //-----------------------------------------------------------------------------
 // Filename: HTMLWriterBalance.h
 // Description: header-file-file for the HTMLWriter
@@ -12,17 +10,17 @@
 // Last change: 18.04.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
+#include "HTMLWriter.h"
+
 //------------------------------------------------------------------------------
 // HTMLWriter wird eingebunden um als Basisklasse zu dienen
-//
 //------------------------------------------------------------------------------
-class HTMLWriter;
 
 class HTMLWriterBalance : HTMLWriter{
   public:
     HTMLWriterBalance(std::string filename);
 
     void writeFile(int lemon, int sugar, int cash, int delta);
-
 };
 #endif

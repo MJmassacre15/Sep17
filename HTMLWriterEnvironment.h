@@ -1,8 +1,5 @@
 #ifndef HTMLWriterEnvironment_h
 #define HTMLWriterEnvironment_h
-#include <iostream>
-#include "HTMLWriter.h"
-
 //-----------------------------------------------------------------------------
 // Filename: HTMLWriterEnvironment.h
 // Description: header-file-file for the HTMLWriter
@@ -13,11 +10,12 @@
 // Last change: 18.04.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
+#include "HTMLWriter.h"
+
 //------------------------------------------------------------------------------
 // HTMLWriter wird eingebunden um als Basisklasse zu dienen
-//
 //------------------------------------------------------------------------------
-class HTMLWriter;
 
 class HTMLWriterEnvironment : HTMLWriter{
   public:
@@ -26,6 +24,5 @@ class HTMLWriterEnvironment : HTMLWriter{
 
     //writeFile function:
     void writeFile(EnvironmentalCondition ec);
-
 };
 #endif

@@ -1,7 +1,5 @@
 #ifndef HTMLWriter_h
 #define HTMLWriter_h
-#include <iostream>
-
 //-----------------------------------------------------------------------------
 // Filename: HTMLWriter.h
 // Description: header-file for the HTMLWriter
@@ -12,9 +10,11 @@
 // Last change: 18.04.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
+
 //------------------------------------------------------------------------------
 // Basisklasse die von HTMLWriterEnvironment und HTMLWriterBalance
-// abgeleitet werden
+// abgeleitet wird
 //------------------------------------------------------------------------------
 class HTMLWriter{
   public:
@@ -22,7 +22,6 @@ class HTMLWriter{
     HTMLWriter(std::string filename);
 
     void writeFile(std::string String);
-
 
 };
 #endif

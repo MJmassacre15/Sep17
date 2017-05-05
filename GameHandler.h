@@ -1,9 +1,5 @@
 #ifndef GameHandler_h
 #define GameHandler_h
-#include <iostream>
-#include "View.h"
-#include <vector>
-
 //-----------------------------------------------------------------------------
 // Filename: GameHandler.h
 // Description: header-file for the HTMLWriter
@@ -14,8 +10,12 @@
 // Last change: 06.04.2017
 //-----------------------------------------------------------------------------
 
-class GameHandler{
+#include <iostream>
+#include "View.h"
+#include <vector>
 
+class GameHandler
+{
   public:
     //constructor:
     GameHandler();
@@ -26,6 +26,5 @@ class GameHandler{
     bool check_error(int error);
 
     int play(View &view, std::vector<std::string>& params);
-
 };
 #endif

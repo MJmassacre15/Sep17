@@ -11,11 +11,9 @@
 #include "Quit.h"
 #include "View.h"
 
-
 //------------------------------------------------------------------------------
 Quit::Quit(std::string name) : Command(name)
-{
-}
+{}
 
 
 //------------------------------------------------------------------------------
@@ -31,7 +29,7 @@ int Quit::execute(std::vector<std::string>& params)
   }
   else
   {
-      view->view_output("[ERR] Usage: quit\n");
+    view->view_output("[ERR] Usage: quit\n");
   }
   view->~View();
   return 1;

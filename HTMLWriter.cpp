@@ -23,10 +23,8 @@ HTMLWriter::HTMLWriter(std::string filename) : filename_(filename)
 //------------------------------------------------------------------------------
 void HTMLWriter::writeFile(std::string String)
 {
-
-
   std::ofstream basic_html;
-  basic_html.open(HTMLWriter::filename_ + ".html");
+  basic_html.open(HTMLWriter::filename_);
 
   basic_html <<  " <!DOCTYPE html>";
   basic_html <<  " <html lang='en'>";

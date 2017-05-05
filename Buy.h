@@ -1,7 +1,5 @@
 #ifndef Buy_h
 #define Buy_h
-#include <iostream>
-#include "Command.h"
 //------------------------------------------------------------------------------
 // Filename: Buy.h
 // Description: header-file for the Buy function
@@ -12,10 +10,10 @@
 // Last change: 03.05.2017
 //-----------------------------------------------------------------------------
 #include "Command.h"
+#include <iostream>
 
-class Command;
-
-class Buy : Command{
+class Buy : Command
+{
   private:
     std::string name_;
   public:
@@ -25,4 +23,5 @@ class Buy : Command{
     virtual int execute(std::vector<std::string>& params) override;
     int setvalue_buy(int lemon, int sugar);
 };
+
 #endif

@@ -21,28 +21,28 @@ int CommandLine::check_args(int argc, char* argv[])
 {
   View *view = new View();
   int iterator = 1;
-  // int j = 0;
+
   if (argc != 4)
   {
     view->view_output("[ERR] Wrong usage: ./basic <price_lemonade> <price_lemon> <price_sugar>\n");
     //this check works
     return 2;
   }
-    for (; iterator < argc; iterator++)
+  for (; iterator < argc; iterator++)
+  {
+    char* end;
+    long val = strtol(argv[iterator], &end, 10);
+    if (argc >= 2 && !end[0] && val >= 0)
     {
-      char* end;
-      long val = strtol(argv[iterator], &end, 10);
-        if (argc >= 2 && !end[0] && val >= 0)
-        {
-            // printf("%s is valid\n", argv[iterator]);
-        }
-        else
-        {
-            // printf("%s is invalid\n", argv[iterator]);
-            view->view_output("[ERR] Wrong usage: ./basic <price_lemonade> <price_lemon> <price_sugar>\n");
-            return 2;
-        }
-      }
+      // printf("%s is valid\n", argv[iterator]);
+    }
+    else
+    {
+      // printf("%s is invalid\n", argv[iterator]);
+      view->view_output("[ERR] Wrong usage: ./basic <price_lemonade> <price_lemon> <price_sugar>\n");
+      return 2;
+    }
+  }
   view->~View();
   return 0;
 }

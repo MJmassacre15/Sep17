@@ -1,7 +1,5 @@
 #ifndef View_h
 #define View_h
-#include <iostream>
-#include "EnvironmentalCondition.h"
 //------------------------------------------------------------------------------
 // Filename: View.h
 // Description: header-file for the VIEW
@@ -12,8 +10,11 @@
 // Last change: 30.03.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
+#include "EnvironmentalCondition.h"
 
-class View{
+class View
+{
   public:
     View();
     ~View();

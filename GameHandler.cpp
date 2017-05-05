@@ -58,14 +58,13 @@ int GameHandler::play(View &view, std::vector<std::string>& params)
 {
   if(params.size() == 0)
   {
-  //do stuff
     std::cout << "New round!" << std::endl;
     std::cout << "Lagerbestände werden neu berechnet" << std::endl;
     return 0;
   }
   else
   {
-      view.view_output("[ERR] Usage: play\n");
+    view.view_output("[ERR] Usage: play\n");
   }
   return 1;
 }
@@ -88,23 +87,24 @@ int GameHandler::check_command(View &view)
   size_t position;
   std::vector<std::string> params_vec;
   command = (view.view_input()) + empty;
-  //really supid workaround for our problem, that find() cant find the end
-  //of the input vector
 
-//------------------------------------------------------------------------------
-// The command_name have to be called "", because it would be taken from the
-// former loop
-// Count (= number of params) must be set to -1.
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // really supid workaround for our problem, that find() cant find the end
+  //   of the input vector
+  // The command_name have to be called "", because it would be taken from the
+  // former loop
+  // Count (= number of params) must be set to -1.
+  //----------------------------------------------------------------------------
   command_name = "";
   count = -1;
   params_vec.clear();
-//------------------------------------------------------------------------------
-// Finding blank spaces and ignore them, so the inpute can be splitted
-// [-1]  command name
-// [0]  from her given parameters
-//      e.g.: 1 parameter, stored in params[0]
-//------------------------------------------------------------------------------
+
+  //----------------------------------------------------------------------------
+  // Finding blank spaces and ignore them, so the inpute can be splitted
+  // [-1]  command name
+  // [0]  from her given parameters
+  //      e.g.: 1 parameter, stored in params[0]
+  //----------------------------------------------------------------------------
   while((position = command.find(empty)) != std::string::npos)
   {
     temp = command.substr(0, position);
@@ -122,10 +122,10 @@ int GameHandler::check_command(View &view)
     }
     command.erase(0, position + empty.length());
   }
-//------------------------------------------------------------------------------
-// Loop ends, but the last part of the command wasn't checked.
-// Same check as in while-loop
-//------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
+  // Loop ends, but the last part of the command wasn't checked.
+  // Same check as in while-loop
+  //----------------------------------------------------------------------------
   if(command != "")
   {
     if(count == -1)
@@ -139,8 +139,9 @@ int GameHandler::check_command(View &view)
     count++;
   }
 
-std::transform(command_name.begin(), command_name.end(), command_name.begin(),
+  std::transform(command_name.begin(), command_name.end(), command_name.begin(),
             ::tolower);
+
   //----------------------------------------------------------------------------
   // Check if command name, number of parameters and format of the parameters
   // are correct and if so, the called command is executed

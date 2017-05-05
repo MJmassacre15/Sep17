@@ -12,9 +12,8 @@
 // Last change: 26.04.2017
 //-----------------------------------------------------------------------------
 
-class Command;
-
-class Quote : Command{
+class Quote : Command
+{
   private:
     std::string name_;
   public:

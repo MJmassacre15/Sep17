@@ -1,7 +1,5 @@
 #ifndef Recipe_h
 #define Recipe_h
-#include <iostream>
-#include "Command.h"
 //------------------------------------------------------------------------------
 // Filename: Recipe.h
 // Description: header-file for the recipe command
@@ -12,10 +10,11 @@
 // Last change: 26.04.2017
 //-----------------------------------------------------------------------------
 
+#include <iostream>
+#include "Command.h"
 
-class Command;
-
-class Recipe : Command{
+class Recipe : Command
+{
   private:
     std::string name_;
   public:
