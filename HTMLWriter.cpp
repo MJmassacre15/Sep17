@@ -26,18 +26,18 @@ void HTMLWriter::writeFile(std::string String)
   std::ofstream basic_html;
   basic_html.open(HTMLWriter::filename_);
 
-if (basic_html != 0)
-{
-  basic_html <<  " <!DOCTYPE html>";
-  basic_html <<  " <html lang='en'>";
-  basic_html <<  " <head>";
-  basic_html <<  " <meta charset='utf-8'>";
-  basic_html <<  " <meta http-equiv='refresh' content='3'>";
-  basic_html <<  " <title>SEP 2017</title>";
-  basic_html <<  " <style>body{margin: 0px; padding: 0px;}</style>";
-  basic_html <<  " </head>";
-  basic_html <<  " <body>" << String << "</body>";
-  basic_html <<  " </html>";
-}
+  if (basic_html != 0)
+  {
+    basic_html <<  " <!DOCTYPE html>";
+    basic_html <<  " <html lang='en'>";
+    basic_html <<  " <head>";
+    basic_html <<  " <meta charset='utf-8'>";
+    basic_html <<  " <meta http-equiv='refresh' content='3'>";
+    basic_html <<  " <title>SEP 2017</title>";
+    basic_html <<  " <style>body{margin: 0px; padding: 0px;}</style>";
+    basic_html <<  " </head>";
+    basic_html <<  " <body>" << String << "</body>";
+    basic_html <<  " </html>";
+  }
   basic_html.close();
 }

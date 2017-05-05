@@ -9,7 +9,7 @@ abegleitete klassen
 HTMLWriter string private
 copy constructor auf delete
 destruktor virtual
-datei open überprüfen
+datei open überprüfen                                                           erledigt (kontrolle wäre gut)
 statt destructor aufruf ein delete (auch in abgeleiteten klassen)
 fehlermeldungen auch als konstanten
 return values konstanten
