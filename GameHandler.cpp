@@ -60,35 +60,7 @@ int GameHandler::run()
   return 0;
 }
 
-//------------------------------------------------------------------------------
-// function play : calcs some data and sets new round
-//------------------------------------------------------------------------------
-int GameHandler::play(View &view, std::vector<std::string>& params)
-{
-  if(params.size() == 0)
-  {
-    std::cout << "New round!" << std::endl;
-    std::cout << "Lagerbestände werden neu berechnet" << std::endl;
 
-    EnvironmentalEngine *engine = nullptr;
-    try
-    {
-      engine = new EnvironmentalEngine();
-    }
-    catch(std::bad_alloc)
-    {
-      view.view_output(EXIT_1);
-    }
-    view.write_html_environment(engine->createCondition());
-
-    return 0;
-  }
-  else
-  {
-    view.view_output(ERROR_1);
-  }
-  return 1;
-}
 
 
 //------------------------------------------------------------------------------
@@ -230,4 +202,67 @@ bool GameHandler::check_error(int error)
   {
     return true;
   }
+}
+
+
+
+
+
+//------------------------------------------------------------------------------
+// function play : calcs some data and sets new round
+//------------------------------------------------------------------------------
+int GameHandler::play(View &view, std::vector<std::string>& params)
+{
+  // testing vars:
+  int lemon, sugar, cash, delta;
+  int income, expense, profit;
+  int lemonade_sold, lemonade_price, lemons_price, lemons_bought, sugar_price,
+      sugar_bought;
+
+  lemon = 5;
+  sugar = 10;
+  cash = 1000;
+  delta = 0;
+  lemonade_sold = 50;
+  lemonade_price = 3;
+  lemons_price = 1;
+  lemons_bought = 50;
+  sugar_bought = 80;
+  sugar_price = 2;
+
+  if(params.size() == 0)
+  {
+    std::cout << "New round!" << std::endl;
+    std::cout << "Lagerbestände und Budget werden neu berechnet" << std::endl;
+
+    //--------------------------------------------------------------------------
+    // budget calculation:
+
+    income = lemonade_sold * lemonade_price;
+    expense = (lemons_bought * lemons_price) + (sugar_bought * sugar_price);
+    profit = income - expense;
+
+    std::cout << "Einnahmen: " << income << " Ausgaben: " << expense << " Profit: " << profit << std::endl;
+
+    EnvironmentalEngine *engine = nullptr;
+    try
+    {
+      engine = new EnvironmentalEngine();
+    }
+    catch(std::bad_alloc)
+    {
+      view.view_output(EXIT_1);
+      return 1;
+    }
+    view.write_html_environment(engine->createCondition());
+    view.write_html_balance(lemon, sugar, cash, delta);
+
+
+    return 0;
+  }
+  else
+  {
+    view.view_output(ERROR_1);
+  }
+  return 1;
 }
