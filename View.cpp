@@ -39,12 +39,12 @@ std::string View::view_input()
 
 void View::write_html_balance(int lemon, int sugar, int cash, int delta)
 {
-  HTMLWriterBalance* writer_Bal = new HTMLWriterBalance("Balance");
-  writer_Bal->writeFile(lemon, sugar, cash, delta);
+  HTMLWriterBalance writer_Bal("Balance.html");
+  writer_Bal.writeFile(lemon, sugar, cash, delta);
 }
 
 void View::write_html_environment(EnvironmentalCondition &condition)
 {
-  HTMLWriterEnvironment* writer_Env = new HTMLWriterEnvironment("Umwelt");
-  writer_Env->writeFile(condition);
+  HTMLWriterEnvironment writer_Env("Umwelt.html");
+  writer_Env.writeFile(condition);
 }
