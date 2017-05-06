@@ -17,4 +17,4 @@ zu jeder klasse ein header-
 GameHandler auf stack                                                           erledigt
 abgeleitete klassen keine variablen doopelt deklarieren                         erledigt  - außer bei HTML Writers...
 params check in commands selber
-catch bad_alloc bei allen news.
+catch bad_alloc bei allen news.                                                 erledigt

@@ -68,8 +68,18 @@ int GameHandler::play(View &view, std::vector<std::string>& params)
   {
     std::cout << "New round!" << std::endl;
     std::cout << "Lagerbestände werden neu berechnet" << std::endl;
-    EnvironmentalEngine *engine = new EnvironmentalEngine();
+
+    EnvironmentalEngine *engine = nullptr;
+    try
+    {
+      engine = new EnvironmentalEngine();
+    }
+    catch(std::bad_alloc)
+    {
+      view.view_output("[ERR] Out of memory.\n");
+    }
     view.write_html_environment(engine->createCondition());
+
     return 0;
   }
   else
