@@ -28,19 +28,24 @@
 #include <string>
 #include <vector>
 
+//------------------------------------------------------------------------------
+// constructor
 GameHandler::GameHandler()
 {}
 
+//------------------------------------------------------------------------------
+// destructor
 GameHandler::~GameHandler()
 {}
 
-int GameHandler::run()
-{
 //------------------------------------------------------------------------------
+// function run() : runs the game
 // variabls
 //  run - as long, as the game runs
 //  error - errors from execute commands
 //------------------------------------------------------------------------------
+int GameHandler::run()
+{
   bool run = true;
   int error;
   View view;
@@ -54,13 +59,17 @@ int GameHandler::run()
   return 0;
 }
 
-
+//------------------------------------------------------------------------------
+// function play : calcs some data and sets new round
+//------------------------------------------------------------------------------
 int GameHandler::play(View &view, std::vector<std::string>& params)
 {
   if(params.size() == 0)
   {
     std::cout << "New round!" << std::endl;
     std::cout << "Lagerbestände werden neu berechnet" << std::endl;
+    EnvironmentalEngine *engine = new EnvironmentalEngine();
+    view.write_html_environment(engine->createCondition());
     return 0;
   }
   else
@@ -71,9 +80,8 @@ int GameHandler::play(View &view, std::vector<std::string>& params)
 }
 
 
-int GameHandler::check_command(View &view)
-{
 //------------------------------------------------------------------------------
+// function check_command: checks input if it is a valid command and executes it
 // variabls
 //  run - as long, as the game runs
 //  command - input command and the name and temp variabls
@@ -82,6 +90,8 @@ int GameHandler::check_command(View &view)
 //  position - position of the blank spaces
 //  params_vec - vector for the given params
 //------------------------------------------------------------------------------
+int GameHandler::check_command(View &view)
+{
   std::string command, command_name, temp;
   int count;
   std::string empty = " ";

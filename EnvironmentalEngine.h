@@ -15,7 +15,7 @@
 class EnvironmentalEngine
 {
   public:
-    EnvironmentalCondition* createCondition();
+    EnvironmentalCondition& createCondition();
 
 };
 #endif
