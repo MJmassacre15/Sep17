@@ -47,13 +47,12 @@ int main(int argc, char* argv[])
   //   view->view_output("sep> ERROR: USAGE Trump4Prez n");
   // }
 
-  CommandLine *commandlinecheck = new CommandLine();
+  CommandLine commandlinecheck;
 
-  if ((commandlinecheck->check_args(argc, argv)) != 2)
+  if ((commandlinecheck.check_args(argc, argv)) != 2)
   {
-    GameHandler *game = new GameHandler();
-    game->run();
-    game->~GameHandler();
+    GameHandler game;
+    game.run();
   }
   return 0;
 }

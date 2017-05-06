@@ -16,12 +16,11 @@
 class Setweather : Command
 {
   private:
-    std::string name_;
   public:
     Setweather(std::string name);
 
     // virtual int execute(GameHandler& game, std::vector<std::string>& params) override;
-    virtual int execute(std::vector<std::string>& params) override;
+    virtual int execute(View view, std::vector<std::string>& params) override;
     int setvalue(int cover,
                  int precipitation,
                  int wind,

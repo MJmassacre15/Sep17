@@ -9,7 +9,7 @@
 //-----------------------------------------------------------------------------
 
 #include "Buy.h"
-#include "GameData.h"
+// #include "GameData.h"
 #include "View.h"
 
 
@@ -19,13 +19,12 @@ Buy::Buy(std::string name) : Command(name)
 }
 
 //------------------------------------------------------------------------------
-int Buy::execute(std::vector<std::string>& params)
+int Buy::execute(View view, std::vector<std::string>& params)
 {
   //Testvariables
   int cash = 5000;
   int lemon_cost = 500;
   int sugar_cost = 500;
-  View *view = new View();
 
   unsigned int lemon = stoi(params[0]);
   unsigned int sugar = stoi(params[1]);
@@ -41,15 +40,14 @@ int Buy::execute(std::vector<std::string>& params)
   }
   else
   {
-    view->view_output("Bought:\n");
-    view->view_output("L: " + lemon);
-    view->view_output("%\n");
-    view->view_output("S: " + sugar);
-    view->view_output("%\n");
+    view.view_output("Bought:\n");
+    view.view_output("L: " + lemon);
+    view.view_output("%\n");
+    view.view_output("S: " + sugar);
+    view.view_output("%\n");
   }
 
   setvalue_buy(lemon, sugar);
-  view->~View();
   return 0;
 }
 

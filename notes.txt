@@ -10,11 +10,11 @@ HTMLWriter string private
 copy constructor auf delete
 destruktor virtual
 datei open überprüfen                                                           erledigt (kontrolle wäre gut)
-statt destructor aufruf ein delete (auch in abgeleiteten klassen)
+statt destructor aufruf ein delete (auch in abgeleiteten klassen)               erledigt
 fehlermeldungen auch als konstanten
 return values konstanten
 zu jeder klasse ein header-
 GameHandler auf stack                                                           erledigt
-abgeleitete klassen keine variablen doopelt deklarieren
+abgeleitete klassen keine variablen doopelt deklarieren                         erledigt  - außer bei HTML Writers...
 params check in commands selber
 catch bad_alloc bei allen news.

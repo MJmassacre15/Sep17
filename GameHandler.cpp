@@ -43,12 +43,12 @@ int GameHandler::run()
 //------------------------------------------------------------------------------
   bool run = true;
   int error;
-  View *view = new View();
+  View view;
 
   while(run == true)  // only stopped by QUIT
   {
-    view->view_output("sep> ");
-    error = check_command(*view);
+    view.view_output("sep> ");
+    error = check_command(view);
     run = check_error(error);
   }
   return 0;
@@ -164,19 +164,19 @@ int GameHandler::check_command(View &view)
   }
   else if(command_name == "echo")
   {
-    echo.execute(params_vec);
+    echo.execute(view, params_vec);
   }
   else if((command_name == "balance"))
   {
-    balance.execute(params_vec);
+    balance.execute(view, params_vec);
   }
   else if((command_name == "quote"))
   {
-    quote.execute(params_vec);
+    quote.execute(view, params_vec);
   }
   else if((command_name == "recipe"))
   {
-    switch(recipe.execute(params_vec))
+    switch(recipe.execute(view, params_vec))
     {
       case 2:
         view.view_output("[ERR] Usage: recipe [lemon] [sugar] [water]\n");
@@ -188,7 +188,7 @@ int GameHandler::check_command(View &view)
   }
   else if((command_name == "setweather"))
   {
-    switch(setweather.execute(params_vec))
+    switch(setweather.execute(view, params_vec))
     {
       case 2:
         view.view_output("[ERR] Usage: setweather [cover] [precipitation] [temperature] [wind]\n");
@@ -200,9 +200,8 @@ int GameHandler::check_command(View &view)
   }
   else if(command_name == "quit")
   {
-    if(quit.execute(params_vec) == 0)
+    if(quit.execute(view, params_vec) == 0)
     {
-      view.~View();
       return 0;
     }
   }

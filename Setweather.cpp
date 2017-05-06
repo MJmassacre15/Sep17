@@ -21,9 +21,8 @@ Setweather::Setweather(std::string name) : Command(name)
 
 
 //------------------------------------------------------------------------------
-int Setweather::execute(std::vector<std::string>& params)
+int Setweather::execute(View view, std::vector<std::string>& params)
 {
-  View *view = new View();
   if(params.size() == 4)
   {
     int cover, precipitation, temperature;
@@ -40,7 +39,6 @@ int Setweather::execute(std::vector<std::string>& params)
     }
     catch(std::invalid_argument)
     {
-      view->~View();
       return 1;
     }
 
@@ -63,7 +61,6 @@ int Setweather::execute(std::vector<std::string>& params)
   }
   else
   {
-    view->~View();
     return 2;
   }
 }

@@ -46,7 +46,7 @@ class Command
     // @return Integer representing the success of the action
 
     // virtual int execute(GameHandler& game, std::vector<std::string>& params) = 0;
-    virtual int execute(std::vector<std::string>& params) = 0;
+    virtual int execute(View view, std::vector<std::string>& params) = 0;
 
     //--------------------------------------------------------------------------
     // Getter Methods

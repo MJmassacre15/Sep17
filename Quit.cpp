@@ -18,19 +18,16 @@ Quit::Quit(std::string name) : Command(name)
 
 //------------------------------------------------------------------------------
 // int Quit::execute(GameHandler& game, std::vector<std::string>& params)
-int Quit::execute(std::vector<std::string>& params)
+int Quit::execute(View view, std::vector<std::string>& params)
 {
-  View *view = new View();
   if(params.size() == 0)
   {
-    view->view_output("Going out of business!\n");
-    view->~View();
+    view.view_output("Going out of business!\n");
     return 0;
   }
   else
   {
-    view->view_output("[ERR] Usage: quit\n");
+    view.view_output("[ERR] Usage: quit\n");
   }
-  view->~View();
   return 1;
 }
