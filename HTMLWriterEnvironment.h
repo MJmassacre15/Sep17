@@ -18,6 +18,7 @@
 //------------------------------------------------------------------------------
 
 class HTMLWriterEnvironment : HTMLWriter{
+  private:
   public:
     //constructor:
     HTMLWriterEnvironment(std::string filename);

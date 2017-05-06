@@ -13,8 +13,8 @@
 #include <fstream>
 
 
-HTMLWriterEnvironment::HTMLWriterEnvironment(std::string filename) : HTMLWriter
-(filename)
+HTMLWriterEnvironment::HTMLWriterEnvironment(std::string filename) :
+HTMLWriter (filename)
 {}
 
 //------------------------------------------------------------------------------

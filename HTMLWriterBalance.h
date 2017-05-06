@@ -18,9 +18,12 @@
 //------------------------------------------------------------------------------
 
 class HTMLWriterBalance : HTMLWriter{
+  private:
   public:
+    //constructor
     HTMLWriterBalance(std::string filename);
 
+    //write function
     void writeFile(int lemon, int sugar, int cash, int delta);
 };
 #endif

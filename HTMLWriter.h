@@ -17,6 +17,7 @@
 // abgeleitet wird
 //------------------------------------------------------------------------------
 class HTMLWriter{
+  private:
   public:
     std::string filename_;
     HTMLWriter(std::string filename);

@@ -15,11 +15,11 @@ class GameData
   private:
     unsigned int lemon_price_; //set at the beginning of the game
     unsigned int sugar_price_; //set at the beginning of the game
-    unsigned int cash_; //current money
-    unsigned int lemons_;  //number of lemons in the storage
-    unsigned int sugar_;   //amount of sugar in the storage
-    int balance_; //
-    int[3] current_lemonade_; //lemonade of this round
+    unsigned int cash_;        //current money
+    unsigned int lemons_;      //number of lemons in the storage
+    unsigned int sugar_;       //amount of sugar in the storage
+    int balance_;              //
+    int [3] current_lemonade_; //lemonade of this round
     unsigned int temperature_; //temperature (especially for forecast)
 
 
