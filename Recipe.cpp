@@ -40,7 +40,8 @@ int Recipe::execute(View view, std::vector<std::string>& params)
     }
     catch(std::invalid_argument)
     {
-      return 2;
+      view.view_output(ERROR_2);
+      return 0;
     }
 
     lemon_ = std::to_string(abs(lemon));
@@ -49,11 +50,12 @@ int Recipe::execute(View view, std::vector<std::string>& params)
 
     if((lemon_ != params[0]) || (sugar_ != params[1]) || (water_ != params[2]))
     {
-      return 2;
+      view.view_output(ERROR_2);
     }
     else if ((lemon + sugar + water) != 100)
     {
-      return 1;
+      view.view_output(ERROR_3);
+      return 0;
     }
     else
     {
@@ -67,7 +69,7 @@ int Recipe::execute(View view, std::vector<std::string>& params)
   }
   else
   {
-    return 2;
+    view.view_output(ERROR_2);
   }
   return 0;
 }

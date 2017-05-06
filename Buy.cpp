@@ -31,7 +31,7 @@ int Buy::execute(View view, std::vector<std::string>& params)
 
   if (cash < lemon_cost + sugar_cost)
   {
-    std::cout << "[WARN] Not enough money. I buy what I can.\n";
+    view.view_output(WARN_0);
     while (cash < lemon_cost + sugar_cost)
     {
       lemon--;

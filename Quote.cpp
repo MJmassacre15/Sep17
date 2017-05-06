@@ -32,7 +32,7 @@ int Quote::execute(View view, std::vector<std::string>& params)
   else
   {
     //  std::cout << "[ERR] Usage: quote\n";
-    view.view_output("[ERR] Usage: quote\n");
+    view.view_output(ERROR_8);
   }
   return 0;
 }

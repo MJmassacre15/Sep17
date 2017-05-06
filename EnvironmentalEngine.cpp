@@ -36,7 +36,7 @@ EnvironmentalCondition& EnvironmentalEngine::createCondition()
   catch(std::bad_alloc)
   {
     View view;
-    view.view_output("[ERR] Out of memory.\n");
+    view.view_output(EXIT_1);
   }
   return *condition;
 }

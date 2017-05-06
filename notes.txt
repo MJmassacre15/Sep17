@@ -11,10 +11,10 @@ copy constructor auf delete
 destruktor virtual
 datei open überprüfen                                                           erledigt (kontrolle wäre gut)
 statt destructor aufruf ein delete (auch in abgeleiteten klassen)               erledigt
-fehlermeldungen auch als konstanten
-return values konstanten
+fehlermeldungen auch als konstanten                                             erledigt
+return values konstanten                                                        erledigt, 0d3r?
 zu jeder klasse ein header-
 GameHandler auf stack                                                           erledigt
 abgeleitete klassen keine variablen doopelt deklarieren                         erledigt  - außer bei HTML Writers...
-params check in commands selber
+params check in commands selber                                                 erledigt
 catch bad_alloc bei allen news.                                                 erledigt

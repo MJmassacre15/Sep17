@@ -39,7 +39,8 @@ int Setweather::execute(View view, std::vector<std::string>& params)
     }
     catch(std::invalid_argument)
     {
-      return 1;
+      view.view_output(ERROR_5);
+      return 0;
     }
 
     cover_ = std::to_string(abs(cover));
@@ -51,7 +52,8 @@ int Setweather::execute(View view, std::vector<std::string>& params)
     if((cover_ != params[0]) || (precipitation_ != params[1]) ||
        (temperature_ != params[2]) || (wind_ != params[3]))
     {
-      return 1;
+      view.view_output(ERROR_5);
+      return 0;
     }
     else
     {
@@ -61,13 +63,14 @@ int Setweather::execute(View view, std::vector<std::string>& params)
   }
   else
   {
-    return 2;
+    view.view_output(ERROR_4);
+    return 0;
   }
 }
 
 
-
-
+//------------------------------------------------------------------------------
+// extra function for execute, no more parameter to check
 int Setweather::setvalue(int cover, int precipitation, int wind,
                          float temperature)
 {

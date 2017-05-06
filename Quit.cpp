@@ -22,12 +22,12 @@ int Quit::execute(View view, std::vector<std::string>& params)
 {
   if(params.size() == 0)
   {
-    view.view_output("Going out of business!\n");
+    view.view_output(EXIT_0);
     return 0;
   }
   else
   {
-    view.view_output("[ERR] Usage: quit\n");
+    view.view_output(ERROR_0);
   }
   return 1;
 }

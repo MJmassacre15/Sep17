@@ -21,5 +21,6 @@ class Balance : Command
 
     // virtual int execute(GameHandler& game, std::vector<std::string>& params) override;
     virtual int execute(View view, std::vector<std::string>& params) override;
+    // const std::string& getName();
 };
 #endif

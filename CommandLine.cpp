@@ -24,8 +24,7 @@ int CommandLine::check_args(int argc, char* argv[])
 
   if (argc != 4)
   {
-    view.view_output("[ERR] Wrong usage: ./basic ");
-    view.view_output("<price_lemonade> <price_lemon> <price_sugar>\n");
+    view.view_output(EXIT_2);
     //this check works
     return 2;
   }
@@ -40,8 +39,7 @@ int CommandLine::check_args(int argc, char* argv[])
     else
     {
       // printf("%s is invalid\n", argv[iterator]);
-      view.view_output("[ERR] Wrong usage: ./basic ");
-      view.view_output("<price_lemonade> <price_lemon> <price_sugar>\n");
+      view.view_output(EXIT_2);
       return 2;
     }
   }

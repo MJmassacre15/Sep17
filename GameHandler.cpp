@@ -21,12 +21,13 @@
 #include "Quit.h"
 #include "Echo.h"
 #include "Setweather.h"
+
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-
 #include <string>
 #include <vector>
+
 
 //------------------------------------------------------------------------------
 // constructor
@@ -76,7 +77,7 @@ int GameHandler::play(View &view, std::vector<std::string>& params)
     }
     catch(std::bad_alloc)
     {
-      view.view_output("[ERR] Out of memory.\n");
+      view.view_output(EXIT_1);
     }
     view.write_html_environment(engine->createCondition());
 
@@ -84,7 +85,7 @@ int GameHandler::play(View &view, std::vector<std::string>& params)
   }
   else
   {
-    view.view_output("[ERR] Usage: play\n");
+    view.view_output(ERROR_1);
   }
   return 1;
 }
@@ -196,27 +197,11 @@ int GameHandler::check_command(View &view)
   }
   else if((command_name == "recipe"))
   {
-    switch(recipe.execute(view, params_vec))
-    {
-      case 2:
-        view.view_output("[ERR] Usage: recipe [lemon] [sugar] [water]\n");
-        break;
-      case 1:
-        view.view_output("[ERR] The sum of parts must be 100.\n");
-        break;
-    }
+    recipe.execute(view, params_vec);
   }
   else if((command_name == "setweather"))
   {
-    switch(setweather.execute(view, params_vec))
-    {
-      case 2:
-        view.view_output("[ERR] Usage: setweather [cover] [precipitation] [temperature] [wind]\n");
-        break;
-      case 1:
-      view.view_output("[ERR] Wrong parameter.\n");
-        break;
-    }
+    setweather.execute(view, params_vec);
   }
   else if(command_name == "quit")
   {
@@ -227,7 +212,7 @@ int GameHandler::check_command(View &view)
   }
   else if(command_name != "")
   {
-    view.view_output("[ERR] Unknown command.\n");
+    view.view_output(ERROR_6);
   }
 return 1;
 }

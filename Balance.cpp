@@ -33,7 +33,13 @@ int Balance::execute(View view, std::vector<std::string>& params)
   }
   else
   {
-    view.view_output("[ERR] Usage: balance\n");
+    view.view_output(ERROR_7);
   }
   return 0;
 }
+
+
+// const std::string &Balance::getName()
+// {
+//   return command_name_;
+// }
