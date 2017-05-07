@@ -4,7 +4,7 @@ html weg                                                                        
 cs                                                                              erledigt(hoffentlich)
 konstanten als static const
 htmlwriter string includen
-balancewriter class nicht deklariern
+balancewriter class nicht deklariern                                            erledigt
 abegleitete klassen
 HTMLWriter string private
 copy constructor auf delete
